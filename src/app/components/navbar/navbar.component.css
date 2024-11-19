@@ -1,0 +1,48 @@
+.navbar-toggler {
+    border: none
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+    /* border: none; */
+}
+
+.navbar-collapse {
+    border: 1px solid red;
+    text-align: center;
+    background-color: #daedff;
+    border: 2px solid #00007B;
+}
+
+.nav-item {
+    margin: 1px;
+    height: 7vh;
+}
+
+.nav-link:hover {
+    background-color: #2db4f4;
+    border: 1px solid #076591;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: #3016EB;
+    border: 1px solid #2DB4F4;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #2411cf;
+    transition: 0.3s;
+}
+
+@media(min-width: 400px){
+    .navbar-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-item {
+        width: 60%;
+    }
+}
