@@ -1,9 +1,39 @@
+/* Logo */
+.navbar-logo {
+    position: absolute;
+    left: 10px;
+    top: 25px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.img-logo {
+    width: 70px;
+}
+
+@media(min-width: 190px) {
+    .img-logo {
+        width: 100px;
+    }
+
+    .navbar-logo {
+        left: 16px;
+        top: 15px;
+    }
+    
+}
+
+/* Menu de Navegação */
+.navbar {
+    margin-top: 10px;
+}
+
 .navbar-toggler {
     border: none
 }
+
 .navbar-toggler:focus {
     box-shadow: none;
-    /* border: none; */
 }
 
 .navbar-collapse {
