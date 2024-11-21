@@ -10,5 +10,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
+  haveLogin:boolean = true;
+  haveNotLogin:boolean = false;
 }
