@@ -50,12 +50,18 @@
     margin: 2px;
 }
 
+.nav-link.active {
+    color: #076591;
+}
+
 .nav-link:hover {
     background-color: #2db4f4;
     /* O outline cria um contorno no elemento sem afetar o tamanho como o border faz */
     outline: 1px solid #076591;
     border-radius: 3px;
     transition: 0.3s;
+    color: #292727;
+    
 }
 
 .btn-primary {
@@ -93,6 +99,10 @@
     .navbar-nav {
         width: 100%;
         gap: 3px;
+    }
+
+    .nav-link.active {
+        border-bottom: 3px solid #076591;
     }
     
     .nav-item-home {
