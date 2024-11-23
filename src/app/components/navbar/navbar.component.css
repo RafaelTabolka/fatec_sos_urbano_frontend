@@ -1,7 +1,7 @@
-* {
-    font-size: 20px;
+:host ::ng-deep a.nav-link.dropdown-toggle::after {
+    display: none; /* Remove a setinha */
 }
-/* Logo */
+
 .navbar-logo {
     position: absolute;
     left: 10px;
@@ -29,6 +29,7 @@
 /* Menu de Navegação */
 .navbar {
     margin-top: 10px;
+    font-size: 20px;
 }
 
 .navbar-toggler {
@@ -64,6 +65,42 @@
     
 }
 
+.item-home-with-login {
+    order: 2;
+}
+
+.how-report-with-login {
+    order: 3;
+}
+
+.nav-item-make-report {
+    order: 4;
+}
+
+.complaints-with-login {
+    order: 5;
+}
+
+.nav-link-user {
+    background-color: #84ccf4;
+    border-radius: 5px;
+    order: 1;
+}
+
+.dropdown-menu {
+    outline: 1px solid #00007B;
+    font-size: 20px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #2db4f4;
+    transition: 0.3s;
+}
+
+.nav-link-button a .btn {
+    font-size: 20px;
+}
+
 .btn-primary {
     background-color: #3016EB;
     border: 1px solid #2DB4F4;
@@ -88,6 +125,17 @@
 }
 
 @media(min-width: 768px) {
+    .item-home-with-login,
+    .how-report-with-login,
+    .nav-item-make-report,
+    .complaints-with-login,
+    .nav-link-user {
+        order: unset;
+    }
+    .alter-font-size {
+        font-size: 16px;
+    }
+
     .navbar-collapse {
         border: none;
     }
@@ -110,12 +158,28 @@
         width: 10%;
     } 
 
+    .item-home-with-login {
+        width: 8%;
+    }
+
     .nav-item-how-report {
         width: 80%;
+    }
+
+    .how-report-with-login {
+        width: 19%;
+    }
+
+    .nav-item-make-report {
+        width: 17%;
     }
     
     .nav-item-complaints {
         margin-right: 250px;
+    }
+
+    .complaints-with-login {
+        width: 12%;
     }
     
     .nav-link-login {
@@ -123,6 +187,24 @@
         right: 145px;
         width: 80px;
     } 
+
+    .nav-link-user {
+        position: absolute;
+        right: 12px;
+        width: 110px;
+    }
+
+    .nav-link-user a {
+        font-size: 18px;
+    }
+
+    .dropdown-menu[data-bs-popper] {
+        right: 1px;
+    }
+
+    .dropdown-menu {
+        min-width: 110px;
+    }
     
     .nav-link-button {
         position: absolute;
@@ -132,17 +214,37 @@
 }
 
 @media(min-width: 850px) {
+    .alter-font-size {
+        font-size: 18px;
+    }
+
     .nav-item-home {
         width: 10%;
         margin-left: 80px;
     }
 
+    .item-home-with-login {
+        width: 8%;
+    }
+
     .nav-item-how-report {
         width: 20%;
+    }
+
+    .how-report-with-login {
+        width: 19%;
+    }
+
+    .nav-item-make-report {
+        width: 17%;
     }
     
     .nav-item-complaints {
         width: 13%;
+    }
+
+    .complaints-with-login {
+        width: 12%;
     }
     
     .nav-link-login {
@@ -150,13 +252,29 @@
         width: 100px;
     }  
 
+    .nav-link-user {
+        width: 150px;
+    }
+
+    .nav-link-user a {
+        font-size: 20px;
+    }
+
     .nav-link-button {
         right: 12px;
         width: 170px;
     }
+
+    .nav-link-button a .btn {
+        font-size: 22px;
+    }
 }
 
 @media(min-width: 992px) {
+    .alter-font-size {
+        font-size: 19px;
+    }
+
     .navbar-nav {
         gap: 10px;
     }
@@ -182,8 +300,20 @@
     .nav-item-how-report {
         width: 17%;
     }
+
+    .how-report-with-login {
+        width: 17%;
+    }
+
+    .nav-item-make-report {
+        width: 15%;
+    }
     
     .nav-item-complaints {
+        width: 11%;
+    }
+
+    .complaints-with-login {
         width: 11%;
     }
     
@@ -191,6 +321,14 @@
         right: 225px;
         width: 140px;
     }  
+
+    .nav-link-user {
+        width: 190px;
+    }
+
+    .nav-link-user a {
+        font-size: 21px;
+    }
     
     .nav-link-button {
         right: 12px;
@@ -213,21 +351,57 @@
         width: 250px;
     }
 
+    .nav-link-button a .btn {
+        font-size: 22px;
+    }
+
 }
 
 @media(min-width: 1400px) {
+    .alter-font-size {
+        font-size: 20px;
+    }
+
+    .item-home-with-login {
+        width: 6%;
+    }
+
     .nav-item-how-report {
         width: 12%;
+    }
+
+    .how-report-with-login {
+        width: 13%;
+    }
+
+    .nav-item-make-report {
+        width: 12%;
+    }
+
+    .complaints-with-login {
+        width: 9%;
     }
 
     .nav-link-login {
         right: 305px;
         width: 200px;
     }  
+
+    .nav-link-user {
+        width: 230px;
+    }
+
+    .nav-link-user a {
+        font-size: 22px;
+    }
     
     .nav-link-button {
         right: 12px;
         width: 290px;
+    }
+
+    .nav-link-button a .btn {
+        font-size: 23px;
     }
 }
 
