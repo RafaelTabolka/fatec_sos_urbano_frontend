@@ -21,16 +21,16 @@
         </li>
         
         <li *ngIf="haveLogin" class="nav-item nav-item-make-report">
-          <a routerLinkActive="active" routerLink="/how-report" class="nav-link" href="#">Fazer Denúncia</a>
+          <a routerLinkActive="active" routerLink="/user-make-report" class="nav-link" href="#">Fazer Denúncia</a>
         </li>
         
         <!-- [ngClass]="{'classe css':se for true aparece os estilos e se for false não aparece'}" -->
         <li [ngClass]="{'complaints-with-login': haveLogin, 'nav-item-complaints': haveNotLogin}" class="nav-item nav-item-complaints">
-          <a routerLinkActive="active" routerLink="/teste" class="nav-link" href="#">Denúncias</a>
+          <a routerLinkActive="active" routerLink="/complaints" class="nav-link" href="#">Denúncias</a>
         </li>
         
         <li *ngIf="haveNotLogin" class="nav-item nav-link-login">
-          <a routerLinkActive="active" routerLink="/login" class="nav-link" href="#">Entrar</a>
+          <a routerLinkActive="active" routerLink="/user-login" class="nav-link" href="#">Entrar</a>
         </li>
         
         <li *ngIf="haveLogin" class="nav-item nav-link-user dropdown">
@@ -44,7 +44,7 @@
         </li>
         
         <li *ngIf="haveNotLogin" class="nav-item nav-link-button">
-          <a routerLinkActive="active" routerLink="/register">            
+          <a routerLinkActive="active" routerLink="/user-register">            
             <button class="btn btn-primary">Cadastrar</button>
           </a>
         </li>

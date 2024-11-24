@@ -60,7 +60,6 @@
     /* O outline cria um contorno no elemento sem afetar o tamanho como o border faz */
     outline: 1px solid #076591;
     border-radius: 3px;
-    transition: 0.3s;
     color: #292727;
     
 }
@@ -150,7 +149,7 @@
     }
 
     .nav-link.active {
-        border-bottom: 3px solid #076591;
+        border-bottom: 1px solid #076591;
     }
     
     .nav-item-home {
@@ -405,5 +404,34 @@
     }
 }
 
+@media(min-width: 2000px) {
+    .nav-item-home {
+        width: 5%;
+    }
+    
+    .item-home-with-login {
+        width: 4%;
+    }
+
+    .nav-item-how-report {
+        width: 9%;
+    }
+
+    .how-report-with-login {
+        width: 9%;
+    }
+
+    .nav-item-make-report {
+        width: 8%;
+    }
+
+    .nav-item-complaints {
+        width: 6%;
+    }
+
+    .complaints-with-login {
+        width: 6%;
+    }
+}
 
 
