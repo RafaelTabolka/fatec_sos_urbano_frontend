@@ -1,0 +1,15 @@
+.container-fluid {
+    padding: 0px 25px;
+}
+
+.row {
+    outline: 1px solid #2DB4F4;
+    padding: 2px;
+    box-shadow: 0px 0px 6px 0px #000;
+}
+
+@media (min-width: 576px) {
+    .container-fluid {
+        padding: 30px;
+    }
+}
