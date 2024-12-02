@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #DAEDFF;
+    color: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.passos {
+    width: 30px;
+    height: 30px;
+    background-color: #b0d8f7;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.passos.active {
+    background-color: #3016EB;
+}
+
+.numeros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.centro {
+    background-color: #84CCF4;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(240, 15, 15, 0.1);
+    
+    
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #076591;
+    color: white;
+    height: 25vh;
+    border-radius: 10px;
+    
+}
+.content2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #076591;
+    color: white;
+    height: 25vh;
+    border-radius: 10px;
+    
+}
+.content3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #076591;
+    color: white;
+    height: 35vh;
+    border-radius: 10px;
+    
+}
+
+.mapa {
+    width: 400px;
+    height: 150px; 
+    border-radius: 10px;
+    margin-top: 20px; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.font{
+    color: #00007B;
+}
+
+.display {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+
+.btn-load-photo {
+    width: 100%;
+
+}
+
+.espaco{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+button {
+    font-size: 16px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* display: flex;
+    align-items: center; */
+    gap: 5px;
+    
+}
+.btn-back{
+    cursor: pointer;
+}
+.btbranco {
+    background-color: #E8E8E8;
+    
+    color: #3016EB;
+}
+
+.btbranco:hover {
+    background-color: #d0e7f8;
+    transition: 0.3s;
+}
+
+.btazul {
+    background-color: #3016EB;
+    color: white;
+}
+
+.btazul:hover {
+    background-color: #2411cf;
+    transition: 0.3s;
+}
+
+@media(max-width: 520px){
+    .mapa{
+        width: 350px;
+        height: 150px; 
+    }
+}
+
+@media(max-width: 450px){
+    .mapa{
+        width: 300px;
+        height: 150px; 
+    }
+    .content3{
+        height: 40vh;
+    }
+}
+
+@media(max-width: 400px) {
+    .btazul{
+        width: 45%;
+        font-size: 14px;
+        text-align: center;
+    }
+    .btbranco{
+        width: 45%;
+        font-size: 14px;
+        text-align: center;
+    }
+   .centro{
+    padding: 1px;
+    width: 100%;
+   }
+   .passos{
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+   }
+   .content{
+    font-size: 14px;
+    padding: 5px;
+   }
+   .content2{
+    font-size: 14px;
+    padding: 5px;
+   }
+   .espaco{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    }
+    .font{
+        font-size: 12px;
+        display: flex;
+        justify-content: start;
+    }
+    .form-control{
+        font-size: 16px;
+    }
+    .btn{
+        font-size: 14px;
+    }
+    .mapa{
+        width: 250px;
+        height: 150px; 
+    }
+}
+
+@media(max-width: 350px){
+    .mapa{
+        width: 250px;
+        height: 150px; 
+    }
+    .content3{
+        height: 40vh;
+    }
+}
+
+@media(max-width: 275px){
+    .mapa{
+        width: 200px;
+        height: 150px; 
+    }
+    .content3{
+        height: 40vh;
+    }
+}
+@media(max-width: 200px){
+    .mapa{
+        width: 195px;
+        height: 150px;
+        padding: 1px;
+    }
+    .content3{
+        height: 40vh;
+    }
+}
