@@ -6,6 +6,9 @@
     outline: 1px solid #2DB4F4;
     padding: 2px;
     box-shadow: 0px 0px 6px 0px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (min-width: 576px) {
