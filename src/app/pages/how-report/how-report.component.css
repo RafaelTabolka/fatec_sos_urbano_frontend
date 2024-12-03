@@ -2,17 +2,68 @@
     padding: 0px 25px;
 }
 
-.row {
+.how-report-stage {
     outline: 1px solid #2DB4F4;
-    padding: 2px;
+    padding: 5px 0px;
     box-shadow: 0px 0px 6px 0px #000;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.img-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-desktop {
+    display: none;
+}
+
+.current-stage-title {
+    background-color: #84CCF4;
+    display: flex;
+    justify-content: center;
+    width: 130px;
+    margin-left: -12px;
+    border: 1px solid #076591;
+}
+
 @media (min-width: 576px) {
     .container-fluid {
-        padding: 30px;
+        padding: 0px 30px;
+    }
+
+    .img-mobile {
+        display: none;
+    }
+
+    .img-desktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-fluid {
+        width: 900px;
+    }
+
+    .img-end {
+        width: 350px;
+    }
+}
+
+@media (min-width: 768px) {
+    .current-stage-title {
+        width: 176px;
+        height: 56px;
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container-fluid {
+        padding: 0px;
     }
 }
