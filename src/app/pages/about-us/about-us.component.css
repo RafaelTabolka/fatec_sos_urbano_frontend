@@ -1,0 +1,90 @@
+body {
+    background-color: #DAEDFF; /* Cor de fundo do corpo da página */
+    display: flex; /* Utiliza o Flexbox para a disposição dos elementos */
+    justify-content: center; /* Centraliza horizontalmente os itens */
+    align-items: center; /* Centraliza verticalmente os itens */
+    height: 100vh; /* Define a altura da tela (100% da altura da janela do navegador) */
+    margin: 0; /* Remove qualquer margem padrão */
+    flex-direction: column; /* Organiza os elementos em uma coluna */
+  }
+
+  /* Container para os elementos */
+  .container {
+    width: 100%; /* Ajusta a largura da container para 100% da tela */
+    max-width: 600px; /* Define um máximo de largura para a container */
+    display: flex; /* Usa o Flexbox para organizar as colunas */
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    align-items: center; /* Centraliza as colunas horizontalmente */
+  }
+
+  /* Estilo das colunas (barras com o título e botão de alternância) */
+  .column {
+    background-color: #3016EB; /* Cor de fundo da coluna */
+    padding: 15px; /* Espaçamento interno de 15px em todos os lados */
+    width: 100%; /* A coluna ocupa toda a largura disponível dentro da container */
+    height: 60px; /* Altura fixa para cada coluna */
+    font-size: 20px; /* Define o tamanho da fonte do texto */
+    color: white; /* Cor do texto */
+    border-radius: 30px; /* Bordas arredondadas com raio de 30px */
+    display: flex; /* Usa Flexbox para organizar o conteúdo dentro da coluna */
+    align-items: center; /* Alinha o conteúdo verticalmente no centro */
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    gap: 15px; /* Espaço de 15px entre o botão e o texto */
+    position: relative; /* Permite o uso de posicionamento relativo (como para o ícone de alternância) */
+    margin-bottom: 3rem; /* Aumenta a margem inferior para 3rem */
+    flex-wrap: wrap; /* Permite quebra de linha caso necessário */
+  }
+
+  /* Estilo da aba de conteúdo (a área que aparece ou desaparece ao clicar no botão) */
+  .tab {
+    background-color: #DAEDFF; /* Cor de fundo da aba */
+    padding: 20px; /* Espaçamento interno de 20px */
+    width: 100%; /* A aba ocupa 100% da largura disponível */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor da aba */
+    border-radius: 5px; /* Bordas arredondadas da aba */
+    color: black; /* Cor do texto dentro da aba */
+    font-size: 18px; /* Tamanho da fonte do texto */
+    line-height: 1.6; /* Espaçamento entre as linhas do texto */
+    text-align: justify; /* Justifica o texto para que ocupe toda a largura disponível */
+  }
+
+  /* Estilo do botão de alternância (+ ou -) */
+  .toggle-btn {
+    background-color: #fff; /* Cor de fundo do botão de alternância */
+    color: #3016EB; /* Cor do texto (o símbolo + ou -) */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 50%; /* Forma o botão com bordas arredondadas (círculo) */
+    width: 30px; /* Largura do botão */
+    height: 30px; /* Altura do botão */
+    font-size: 24px; /* Tamanho da fonte do símbolo (+ ou -) */
+    line-height: 30px; /* Alinha verticalmente o conteúdo do botão */
+    text-align: center; /* Alinha o texto (símbolo) no centro do botão */
+    display: flex; /* Usa Flexbox para centralizar o conteúdo dentro do botão */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  }
+
+  /* Alteração no conteúdo do botão baseado no estado da coluna */
+  .column .toggle-btn::before {
+    content: "+"; /* Define o conteúdo do botão como "+" por padrão */
+  }
+
+  /* Quando a coluna está expandida (clicada) o conteúdo do botão muda para "-" */
+  .column.show .toggle-btn::before {
+    content: "-"; /* Define o conteúdo do botão como "-" quando a aba está visível */
+  }
+
+  /* Estilos de margem e afastamento para os itens */
+  .mb-4 {
+    margin-bottom: 1.5rem; /* Margem inferior de 1.5rem */
+  }
+
+  /* Ajustes para telas menores */
+  @media (max-width: 576px) {
+    .container {
+      width: 90%; /* Aumenta a largura da container para 90% da tela em telas pequenas */
+    }
+    .column {
+      font-size: 16px; /* Reduz o tamanho da fonte para telas pequenas */
+    }
+  }
