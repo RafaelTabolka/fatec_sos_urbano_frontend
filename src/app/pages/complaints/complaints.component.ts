@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './complaints.component.css'
 })
 export class ComplaintsComponent {
+  constructor(){}
 
+  ngOnInit(): void {}
 }

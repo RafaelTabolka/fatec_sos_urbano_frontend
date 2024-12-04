@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { NavBarService } from '../../../services/nav-bar.service';
 
 @Component({
   selector: 'app-user-make-report',
@@ -13,6 +14,19 @@ export class UserMakeReportComponent {
   makeReport2: boolean = false;
   makeReport3: boolean = false;
   makeReport4: boolean = false;
+  
+  constructor(
+    private navBarService: NavBarService
+  ){}
+
+  ngOnInit(): void {
+    const haveLoginLocalStorage = localStorage.getItem('haveLogin')
+    const haveNotLoginLocalStorage = localStorage.getItem('haveNotLogin')
+    if (haveLoginLocalStorage !== null && haveNotLoginLocalStorage !== null) {
+      this.navBarService.haveLogin = JSON.parse(haveLoginLocalStorage)
+      this.navBarService.haveNotLogin = JSON.parse(haveNotLoginLocalStorage)
+    }
+  }
   
   alterState() {
     this.makeReport1 = false;

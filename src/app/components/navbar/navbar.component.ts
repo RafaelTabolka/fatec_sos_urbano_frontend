@@ -1,6 +1,7 @@
 import { CommonModule} from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { NavBarService } from '../../services/nav-bar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +11,18 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  haveLogin:boolean = false;
-  haveNotLogin:boolean = true;
+  // haveLogin:boolean = false;
+  // haveNotLogin:boolean = true;
+
+  constructor(
+    public navBarService: NavBarService,
+    private router: Router) {}
+
+  userExits () {
+    this.navBarService.modifyStateLogin()
+    localStorage.setItem('haveLogin', JSON.stringify(this.navBarService.haveLogin))
+    localStorage.setItem('haveNotLogin', JSON.stringify(this.navBarService.haveNotLogin))
+    this.router.navigateByUrl('/home')
+  }
+
 }

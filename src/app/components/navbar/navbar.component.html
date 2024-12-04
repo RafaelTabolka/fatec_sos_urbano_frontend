@@ -4,7 +4,7 @@
 </a>
 
 <!-- Menu de navegação -->
-<nav [ngClass]="{'alter-font-size': haveLogin}" class="navbar navbar-expand-md">
+<nav [ngClass]="{'alter-font-size': navBarService.haveLogin}" class="navbar navbar-expand-md">
   <div class="container-fluid justify-content-end">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span ><img src="assets/Menu_Hamburguer.svg" alt=""></span>
@@ -12,38 +12,38 @@
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li [ngClass]="{'item-home-with-login': haveLogin, 'nav-item-home': haveNotLogin}" class="nav-item">
+        <li [ngClass]="{'item-home-with-login': navBarService.haveLogin, 'nav-item-home': navBarService.haveNotLogin}" class="nav-item">
           <a routerLinkActive="active" routerLink="/home" class="nav-link" aria-current="page" href="#">Home</a>
         </li>
         
-        <li [ngClass]="{'how-report-with-login': haveLogin, 'nav-item-how-report': haveNotLogin}" class="nav-item">
+        <li [ngClass]="{'how-report-with-login': navBarService.haveLogin, 'nav-item-how-report': navBarService.haveNotLogin}" class="nav-item">
           <a routerLinkActive="active" routerLink="/how-report" class="nav-link" href="#">Como Denunciar</a>
         </li>
         
-        <li *ngIf="haveLogin" class="nav-item nav-item-make-report">
+        <li *ngIf="navBarService.haveLogin" class="nav-item nav-item-make-report">
           <a routerLinkActive="active" routerLink="/user-make-report" class="nav-link" href="#">Fazer Denúncia</a>
         </li>
         
         <!-- [ngClass]="{'classe css':se for true aparece os estilos e se for false não aparece'}" -->
-        <li [ngClass]="{'complaints-with-login': haveLogin, 'nav-item-complaints': haveNotLogin}" class="nav-item nav-item-complaints">
+        <li [ngClass]="{'complaints-with-login': navBarService.haveLogin, 'nav-item-complaints': navBarService.haveNotLogin}" class="nav-item nav-item-complaints">
           <a routerLinkActive="active" routerLink="/complaints" class="nav-link" href="#">Denúncias</a>
         </li>
         
-        <li *ngIf="haveNotLogin" class="nav-item nav-link-login">
+        <li *ngIf="navBarService.haveNotLogin" class="nav-item nav-link-login">
           <a routerLinkActive="active" routerLink="/user-login" class="nav-link" href="#">Entrar</a>
         </li>
         
-        <li *ngIf="haveLogin" class="nav-item nav-link-user dropdown">
+        <li *ngIf="navBarService.haveLogin" class="nav-item nav-link-user dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Usuário <img class="bi bi-person" src="" alt="">
           </a>
           <ul class="dropdown-menu" aria-label="Oi" name="" id="">
             <li value=""><a href="#" class="dropdown-item"><i class="bi bi-pencil"></i> Editar</a></li>
-            <li value=""><a href="#" class="dropdown-item"><i class="bi bi-backspace"></i> Sair</a></li>
+            <li (click)="userExits()" value=""><a href="#" class="dropdown-item"><i class="bi bi-backspace"></i> Sair</a></li>
           </ul>
         </li>
         
-        <li *ngIf="haveNotLogin" class="nav-item nav-link-button">
+        <li *ngIf="navBarService.haveNotLogin" class="nav-item nav-link-button">
           <a routerLinkActive="active" routerLink="/user-register">            
             <button class="btn btn-primary">Cadastrar</button>
           </a>

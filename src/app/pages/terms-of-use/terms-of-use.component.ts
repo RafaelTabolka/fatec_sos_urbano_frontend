@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './terms-of-use.component.css'
 })
 export class TermsOfUseComponent {
+  constructor(){}
 
+  ngOnInit(): void {}
 }
