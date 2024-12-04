@@ -9,5 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './user-forget-it-password.component.css'
 })
 export class UserForgetItPasswordComponent {
+  constructor(){}
 
+  ngOnInit(): void {}
 }

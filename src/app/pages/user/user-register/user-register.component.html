@@ -9,7 +9,7 @@
         <input required="" class="input" type="number" name="tel" id="telefone" placeholder="Telefone">
         <input required="" class="input" type="password" name="password" id="password" placeholder="Senha">
         <span class="forgot-password"><a href="../user-login/user-login.component.html"> Ja tem uma conta ? Entrar </a></span>
-        <input class="login-button" type="submit" value="Cadastrar">
+        <input (click)="onSubmit()" class="login-button" type="submit" value="Cadastrar">
         
       </form>
       <div class="social-account-container">
