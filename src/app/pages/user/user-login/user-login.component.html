@@ -1,11 +1,27 @@
 <body>
   <div class="container">
       <div class="heading">Entrar</div>
-      <form action="" class="form">
-        <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail">
-        <input required="" class="input" type="password" name="password" id="password" placeholder="Senha">
+      <form [formGroup]="formLogin" action="" class="form">
+        <input 
+        required="" 
+        class="input" 
+        type="email" 
+        name="email" 
+        id="email" 
+        placeholder="E-mail"
+        formControlName="email">
+        
+        <input 
+        required="" 
+        class="input" 
+        type="password" 
+        name="password" 
+        id="password" 
+        placeholder="Senha"
+        formControlName="password">
+        
         <span class="forgot-password"><a routerLink="/user-forget-it-password"  > Esqueceu sua senha ?</a></span>
-        <input class="login-button" type="submit" value="Entrar">
+        <input (click)="onSubmit()" [disabled]="!formLogin.valid" class="login-button" type="submit" value="Entrar">
         
       </form>
       <div class="social-account-container">
