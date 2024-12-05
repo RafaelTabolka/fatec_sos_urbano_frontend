@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { NavBarService } from '../../../services/nav-bar.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-register',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './user-register.component.html',
   styleUrl: './user-register.component.css'
 })

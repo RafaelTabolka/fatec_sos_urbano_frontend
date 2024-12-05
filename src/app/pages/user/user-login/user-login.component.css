@@ -50,7 +50,7 @@ body{
   
   .form .input:focus {
     outline: none;
-    border-inline: 2px solid #12B1D1;
+    border: 1px solid #2db4f4;
   }
   
   .form .forgot-password {
@@ -90,7 +90,7 @@ body{
   }
   
   .form .login-button:disabled {
-    background: #6352e4;
+    background: #4832e9;
     transform: unset;
   }
   
