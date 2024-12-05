@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { NavBarService } from '../../services/nav-bar.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
   
   constructor(
-    private navBarService: NavBarService
+    private navBarService: NavBarService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -21,5 +23,11 @@ export class HomeComponent {
       this.navBarService.haveLogin = JSON.parse(haveLoginLocalStorage)
       this.navBarService.haveNotLogin = JSON.parse(haveNotLoginLocalStorage)
     }    
+  }
+
+  goToHome () {
+    this.router.navigate(['/how-report']).then(() => {
+      window.scrollTo(0, 0)
+    })
   }
 }
