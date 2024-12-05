@@ -93,6 +93,10 @@ body{
     background: #4832e9;
     transform: unset;
   }
+
+  .message-incorrect-email-password {
+    color: red;
+  }
   
   .social-account-container {
     margin-top: 25px;

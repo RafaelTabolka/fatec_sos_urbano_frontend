@@ -1,19 +1,74 @@
 <body>
   <div class="container">
       <div class="heading">Cadastrar-se</div>
-      <form action="" class="form">
-        <input required="" class="input" type="text" name="name" id="nome" placeholder="Nome">
-        <input required="" class="input" type="text" name="sob" id="sobrenome" placeholder="Sobrenome">
-        <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail">
-        <input required="" class="input" type="text" name="cpf" id="cpf" placeholder="CPF">
-        <input required="" class="input" type="number" name="tel" id="telefone" placeholder="Telefone">
-        <input required="" class="input" type="password" name="password" id="password" placeholder="Senha">
-        <span class="forgot-password"><a routerLink="/user-login"> Ja tem uma conta ? Entrar </a></span>
-        <input (click)="onSubmit()" class="login-button" type="submit" value="Cadastrar">
+      <form [formGroup]="formRegister" action="" class="form">
+        <input 
+        required="" 
+        class="input" 
+        type="text" 
+        name="name" 
+        id="nome" 
+        placeholder="Nome Completo"
+        formControlName="completeName">
         
+        <input 
+        required="" 
+        class="input" 
+        type="email" 
+        name="email" 
+        id="email" 
+        placeholder="E-mail"
+        formControlName="email">
+        
+        <input 
+        required="" 
+        class="input" 
+        type="text" 
+        name="cpf" 
+        id="cpf" 
+        placeholder="CPF"
+        formControlName="cpf">
+        
+        <input 
+        required="" 
+        class="input" 
+        type="number" 
+        name="tel" 
+        id="telefone" 
+        placeholder="Telefone"
+        formControlName="phone">
+        
+        <input 
+        required="" 
+        class="input" 
+        type="password" 
+        name="password" 
+        id="password" 
+        placeholder="Senha"
+        formControlName="password">
+
+        <input 
+        required="" 
+        class="input" 
+        type="password" 
+        name="confirmPassword" 
+        id="confirmPassword" 
+        placeholder="Confirmar Senha"
+        formControlName="confirmPassword">
+
+        <span class="forgot-password"><a routerLink="/user-login"> Ja tem uma conta ? Entrar </a></span>
+        
+        <input 
+        (click)="onSubmit()" 
+        class="login-button" 
+        type="submit" 
+        value="Cadastrar"
+        [disabled]="!formRegister.valid">
       </form>
+      
       <div class="social-account-container">
           <span class="title">Ou entre com</span>
+         
           <div class="social-accounts">
             <button class="social-button google">
               <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 488 512">
@@ -21,6 +76,7 @@
               </svg></button>
           </div>
         </div>
+        
         <span class="agreement"><a href="#">Contrato de licença do usuário</a></span>
     </div>
     

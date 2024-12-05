@@ -95,6 +95,11 @@ body{
     box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
   }
 
+  .form .login-button:disabled {
+    background: #4832e9;
+    transform: unset;
+  }
+
   .social-account-container {
     margin-top: 25px;
   }
