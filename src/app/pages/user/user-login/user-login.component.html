@@ -22,7 +22,7 @@
         
         <span class="forgot-password"><a routerLink="/user-forget-it-password"  > Esqueceu sua senha ?</a></span>
         <input (click)="onSubmit()" [disabled]="!formLogin.valid" class="login-button" type="submit" value="Entrar">
-        
+        <span *ngIf="showMessageError" class="message-incorrect-email-password">E-mail ou senha incorretos!</span>
       </form>
       <div class="social-account-container">
           <span class="title">Ou entre com</span>
