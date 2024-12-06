@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NavBarService } from '../../../services/nav-bar.service';
 
 @Component({
   selector: 'app-user-make-report',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './user-make-report.component.html',
   styleUrl: './user-make-report.component.css'
 })
@@ -57,5 +58,8 @@ export class UserMakeReportComponent {
     this.makeReport2 = false;
     this.makeReport3 = true;
     this.makeReport4 = false;
+  }
+  calcelstats(){
+    
   }
 }

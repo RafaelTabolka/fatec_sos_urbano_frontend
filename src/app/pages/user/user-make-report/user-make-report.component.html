@@ -1,114 +1,114 @@
 <body *ngIf="makeReport1">
-<main class="centro">
-    <div class="numeros mt-1">
-        <span class="passos active">1</span>
-        <span class="passos">2</span>
-        <span class="passos">3</span>
-        <span class="passos">4</span>
-    </div>
-
-    <div class="content">
-        <p>Abaixo, envie uma foto sobre a denúncia</p>
-        <div class="display btn-load-photo mb-2">
-            <button class="btbranco">
-                <span>Carregar foto <i class="bi bi-cloud-arrow-up"></i></span>
-            </button>
-            <button class="btazul">
-                <span>Tirar foto <i class="bi bi-camera"></i></span>
-            </button>
+    <main class="box">
+        <div class="numbers mt-1">
+            <span class="steps active">1</span>
+            <span class="steps">2</span>
+            <span class="steps">3</span>
+            <span class="steps">4</span>
         </div>
+    
+        <div class="content">
+            <p>Abaixo, envie uma foto sobre a denúncia</p>
+            <div class="display btn-load-photo mb-2">
+                <button class="btwhite">
+                    <span>Carregar foto <i class="bi bi-cloud-arrow-up"></i></span>
+                </button>
+                <button class="btblue">
+                    <span>Tirar foto <i class="bi bi-camera"></i></span>
+                </button>
+            </div>
+            
         
-    
-    </div>
-    <div class="display d-flex justify-content-around mt-3 mb-1">
-        <button class="btbranco  d-flex justify-content-center">Cancelar</button>
-        <button (click)="alterState()" class="btazul  d-flex justify-content-center">Continuar</button>
-    </div>
-</main>
-</body>
-
-<body *ngIf="makeReport2">
-<main class="centro">
-    <i (click)="revertState()" class="bi bi-arrow-left btn-back"></i>
-    <div class="numeros mt-1">
-        <span class="passos active">1</span>
-        <span class="passos active">2</span>
-        <span class="passos">3</span>
-        <span class="passos">4</span>
-    </div>
-
-    <div class="content2">
-        <div class="form-floating col-11 mt-1">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 75px"></textarea>
-            <label class="font"for="floatingTextarea2">Descreva o vazamento: </label>
         </div>
-        <p class="col-12 d-flex justify-content-center ">Esse problema afeta mais pessoas?</p>
-        <div class="d-flex espaco mb-5">
-            <input class="btn"type="radio" id="yes" name="affects-others" value="Sim"><label for="yes">Sim</label>
-            <input class="btn"type="radio" id="no" name="affects-others" value="Não"><label for="no">Não</label>
-            <input class="btn"type="radio" id="idk" name="affects-others" value="Não Sei"><label for="no">Não Sei</label>
+        <div class="display d-flex justify-content-around mt-3 mb-1">
+            <button routerLink="/home" class="btwhite  d-flex justify-content-center">Cancelar</button>
+            <button (click)="alterState()" class="btblue  d-flex justify-content-center">Continuar</button>
         </div>
-    
-    </div>
-    <div class="display d-flex justify-content-around mt-3  mb-1">
-        <button class="btbranco  d-flex justify-content-center">Cancelar</button>
-        <button (click)="alterState2()" class="btazul  d-flex justify-content-center">Continuar</button>
-    </div>
-</main>
-</body>
-
-<body *ngIf="makeReport3">
-<main class="centro">
-    <i (click)="revertState2()" class="bi bi-arrow-left btn-back"></i>
-    <div class="numeros mt-1">
-        <span class="passos active">1</span>
-        <span class="passos active">2</span>
-        <span class="passos active">3</span>
-        <span class="passos">4</span>
-    </div>
-
-    <div class="content3">
-        <p class="text-start">Insira a localização:</p>
-        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3525.658056817217!2d-48.36269552495112!3d-21.61769558018312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b8e159d287a237%3A0x70df7e81597e2d08!2sFatec%20Mat%C3%A3o!5e1!3m2!1spt-BR!2sbr!4v1733073249176!5m2!1spt-BR!2sbr" 
-         allowfullscreen="" 
-         loading="fast"
-         referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-        <p>Av. Habib Gabriel, 1360 - Res. Olivio Benassi</p>
-    </div>
-
-    <div class="display d-flex justify-content-around mt-3  mb-1">
-        <button class="btbranco  d-flex justify-content-center">Cancelar</button>
-        <button (click)="alterState3()" class="btazul  d-flex justify-content-center">Continuar</button>
-    </div>
-</main>
-</body>
-
-<body *ngIf="makeReport4">
-    <main class="centro">
-        <i (click)="revertState3()" class="bi bi-arrow-left btn-back"></i>
-        <div class="numeros mt-1">
-            <span class="passos active">1</span>
-            <span class="passos active">2</span>
-            <span class="passos active">3</span>
-            <span class="passos active">4</span>
-        </div>
-    
-        <div>
-           <p>Lembre-se, de acordo com o Código Penal Brasileiro, a falsificação de informações com a intenção de prejudicar alguém ou de induzir a uma investigação errada pode levar a penalidades.<br>
-            Deseja continuar?</p>
-        </div>
-    
-        <div class="display d-flex justify-content-around mt-3  mb-1">
-            <button class="btbranco w-50 d-flex justify-content-center">Cancelar</button>
-            <button class="btazul w-50 d-flex justify-content-center">Continuar</button>
-        </div>
-        <div class="form-check ">
-            <input class="form-check-input pointer" type="checkbox" value="concordo" id="flexCheckIndeterminate">
-            <label class="form-check-label " for="flexCheckIndeterminate">
-              Li e aceito os termos
-            </label>
-          </div>
     </main>
     </body>
     
+    <body *ngIf="makeReport2">
+    <main class="box">
+        <i (click)="revertState()" class="bi bi-arrow-left btn-back"></i>
+        <div class="numbers mt-1">
+            <span class="steps active">1</span>
+            <span class="steps active">2</span>
+            <span class="steps">3</span>
+            <span class="steps">4</span>
+        </div>
+    
+        <div class="content2">
+            <div class="form-floating col-11 mt-1">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 75px"></textarea>
+                <label class="font"for="floatingTextarea2">Descreva o vazamento: </label>
+            </div>
+            <p class="col-12 d-flex justify-content-center ">Esse problema afeta mais pessoas?</p>
+            <div class="d-flex space mb-5">
+                <input class="btn"type="radio" id="yes" name="affects-others" value="Sim"><label for="yes">Sim</label>
+                <input class="btn"type="radio" id="no" name="affects-others" value="Não"><label for="no">Não</label>
+                <input class="btn"type="radio" id="idk" name="affects-others" value="Não Sei"><label for="no">Não Sei</label>
+            </div>
+        
+        </div>
+        <div class="display d-flex justify-content-around mt-3  mb-1">
+            <button routerLink="/home" class="btwhite  d-flex justify-content-center">Cancelar</button>
+            <button (click)="alterState2()" class="btblue  d-flex justify-content-center">Continuar</button>
+        </div>
+    </main>
+    </body>
+    
+    <body *ngIf="makeReport3">
+    <main class="box">
+        <i (click)="revertState2()" class="bi bi-arrow-left btn-back"></i>
+        <div class="numbers mt-1">
+            <span class="steps active">1</span>
+            <span class="steps active">2</span>
+            <span class="steps active">3</span>
+            <span class="steps">4</span>
+        </div>
+    
+        <div class="content3">
+            <p class="text-start">Insira a localização:</p>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3525.658056817217!2d-48.36269552495112!3d-21.61769558018312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b8e159d287a237%3A0x70df7e81597e2d08!2sFatec%20Mat%C3%A3o!5e1!3m2!1spt-BR!2sbr!4v1733073249176!5m2!1spt-BR!2sbr" 
+             allowfullscreen="" 
+             loading="fast"
+             referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <p>Av. Habib Gabriel, 1360 - Res. Olivio Benassi</p>
+        </div>
+    
+        <div class="display d-flex justify-content-around mt-3  mb-1">
+            <button routerLink="/home" class="btwhite  d-flex justify-content-center">Cancelar</button>
+            <button (click)="alterState3()" class="btblue  d-flex justify-content-center">Continuar</button>
+        </div>
+    </main>
+    </body>
+    
+    <body *ngIf="makeReport4">
+        <main class="box">
+            <i (click)="revertState3()" class="bi bi-arrow-left btn-back"></i>
+            <div class="numbers mt-1">
+                <span class="steps active">1</span>
+                <span class="steps active">2</span>
+                <span class="steps active">3</span>
+                <span class="steps active">4</span>
+            </div>
+        
+            <div>
+               <p>Lembre-se, de acordo com o Código Penal Brasileiro, a falsificação de informações com a intenção de prejudicar alguém ou de induzir a uma investigação errada pode levar a penalidades.<br>
+                Deseja continuar?</p>
+            </div>
+        
+            <div class="display d-flex justify-content-around mt-3  mb-1">
+                <button routerLink="/home" class="btwhite w-50 d-flex justify-content-center">Cancelar</button>
+                <button class="btblue w-50 d-flex justify-content-center">Continuar</button>
+            </div>
+            <div class="form-check ">
+                <input class="form-check-input pointer" type="checkbox" value="concordo" id="flexCheckIndeterminate">
+                <label class="form-check-label " for="flexCheckIndeterminate">
+                  Li e aceito os termos
+                </label>
+              </div>
+        </main>
+        </body>
+        

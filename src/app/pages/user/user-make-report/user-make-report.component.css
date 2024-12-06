@@ -9,7 +9,7 @@ body {
     height: 70vh;
 }
 
-.passos {
+.steps {
     width: 30px;
     height: 30px;
     background-color: #b0d8f7;
@@ -23,18 +23,18 @@ body {
     
 }
 
-.passos.active {
+.steps.active {
     background-color: #3016EB;
 }
 
-.numeros {
+.numbers {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-.centro {
+.box {
     background-color: #84CCF4;
     padding: 20px;
     border-radius: 15px;
@@ -79,16 +79,15 @@ body {
     
 }
 
-.mapa {
-    width: 400px;
-    height: 150px; 
+.map {
+    width: 80%;
+    height: 65%; 
     border-radius: 10px;
     margin-top: 20px; 
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .font{
@@ -107,7 +106,7 @@ body {
 
 }
 
-.espaco{
+.space{
     display: flex;
     align-items: center;
     gap: 10px;
@@ -128,56 +127,56 @@ button {
 .btn-back{
     cursor: pointer;
 }
-.btbranco {
+.btwhite {
     background-color: #E8E8E8;
     
     color: #3016EB;
 }
 
-.btbranco:hover {
+.btwhite:hover {
     background-color: #d0e7f8;
     transition: 0.3s;
 }
 
-.btazul {
+.btblue {
     background-color: #3016EB;
     color: white;
 }
 
-.btazul:hover {
+.btblue:hover {
     background-color: #2411cf;
     transition: 0.3s;
 }
 
 @media(max-width: 520px){
-    .mapa{
+    .map{
         width: 350px;
-        height: 150px; 
+        height: 65%;
     }
 }
 
 @media(max-width: 450px){
-    .mapa{
-        width: 300px;
-        height: 150px; 
+    .map{
+        width: 80%;
+        height: 65%; 
     }
     .content3{
-        height: 40vh;
+        height: 30vh;
     }
 }
 
 @media(max-width: 400px) {
-    .btazul{
+    .btblue{
         width: 45%;
         font-size: 14px;
         text-align: center;
     }
-    .btbranco{
+    .btwhite{
         width: 45%;
         font-size: 14px;
         text-align: center;
     }
-   .centro{
+   .box{
     padding: 1px;
     width: 100%;
    }
@@ -194,7 +193,10 @@ button {
     font-size: 14px;
     padding: 5px;
    }
-   .espaco{
+   .content3{
+    height: 30vh
+   }
+   .space{
     display: flex;
     align-items: center;
     gap: 3px;
@@ -210,38 +212,38 @@ button {
     .btn{
         font-size: 14px;
     }
-    .mapa{
-        width: 250px;
-        height: 150px; 
+    .map{
+        width: 80%;
+        height: 65%; 
     }
 }
 
 @media(max-width: 350px){
-    .mapa{
-        width: 250px;
-        height: 150px; 
+    .map{
+        width: 80%;
+        height: 65%; 
     }
     .content3{
-        height: 40vh;
+        height: 30vh;
     }
 }
 
 @media(max-width: 275px){
-    .mapa{
-        width: 200px;
-        height: 150px; 
+    .map{
+        width: 80%;
+        height: 65%; 
     }
     .content3{
-        height: 40vh;
+        height: 30vh;
     }
 }
 @media(max-width: 200px){
-    .mapa{
+    .map{
         width: 195px;
         height: 150px;
         padding: 1px;
     }
     .content3{
-        height: 40vh;
+        height: 30vh;
     }
 }
