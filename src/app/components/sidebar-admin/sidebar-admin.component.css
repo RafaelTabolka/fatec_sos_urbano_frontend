@@ -1,0 +1,74 @@
+.sidebar {
+    background-color: #06577E;
+    height: 100vh;
+    width: 80%;
+    text-align: center;
+}
+
+.offcanvas {
+    background-color: transparent;
+}
+
+.offcanvas-header {
+    outline: 2px solid black;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    padding: 0;
+}
+
+.offcanvas-header button {
+    background-color: transparent;
+    border: none;
+    width: 15vh;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.offcanvas-header button .bi-x-circle {
+    font-size: 25px;
+}
+
+.offcanvas-header .btn-close {
+    position: fixed;
+}
+
+.container {
+    outline: 1px solid red;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-logo {
+    width: 130px;
+    height: auto;
+}
+
+.separation {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.row {
+    outline: 1px solid white;
+    width: 90%;
+}
+
+.teste {
+    outline: 1px solid red;
+    width: 100px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.offcanvas-body .navbar-nav .nav-item .nav-link {
+    color: #E8E8E8;
+    
+}
