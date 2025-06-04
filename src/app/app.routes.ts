@@ -9,6 +9,11 @@ import { UserMakeReportComponent } from './pages/user/user-make-report/user-make
 import { UserRegisterComponent } from './pages/user/user-register/user-register.component';
 import { TermsOfUseComponent } from './pages/terms-of-use/terms-of-use.component';
 import { FaqComponent } from './pages/faq/faq.component';
+import { AdminReportsComponent } from './pages/admin/admin-reports/admin-reports.component';
+import { AdminInstitutionsComponent } from './pages/admin/admin-institutions/admin-institutions.component';
+import { AdminManageIncidentsComponent } from './pages/admin/admin-manage-incidents/admin-manage-incidents.component';
+import { AdminStatisticsComponent } from './pages/admin/admin-statistics/admin-statistics.component';
+import { AdminUsersComponent } from './pages/admin/admin-users/admin-users.component';
 
 export const routes: Routes = [
     {
@@ -66,5 +71,30 @@ export const routes: Routes = [
         path: 'user-register',
         pathMatch: 'full',
         component: UserRegisterComponent
+    },
+    {
+        path: 'admin-institutions',
+        pathMatch: 'full',
+        component: AdminInstitutionsComponent
+    },
+    {
+        path: 'admin-manage-incidents',
+        pathMatch: 'full',
+        component: AdminManageIncidentsComponent
+    },
+    {
+        path: 'admin-reports',
+        pathMatch: 'full',
+        component: AdminReportsComponent
+    },
+    {
+        path: 'admin-statistics',
+        pathMatch: 'full',
+        component: AdminStatisticsComponent
+    },
+    {
+        path: 'admin-users',
+        pathMatch: 'full',
+        component: AdminUsersComponent
     }
 ];

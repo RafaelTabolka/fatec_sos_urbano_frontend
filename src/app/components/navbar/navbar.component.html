@@ -1,13 +1,13 @@
 <!-- Logo -->
 <a routerLink="/home" class="navbar-logo">
-  <img class="img-logo" src="assets/Logo.svg" alt="">
+  <img class="img-logo" src="assets/img-svg/Logo.svg" alt="">
 </a>
 
 <!-- Menu de navegação -->
 <nav [ngClass]="{'alter-font-size': navBarService.haveLogin}" class="navbar navbar-expand-md">
   <div class="container-fluid justify-content-end">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span ><img src="assets/Menu_Hamburguer.svg" alt=""></span>
+      <span ><img src="assets/img-svg/Menu_Hamburguer.svg" alt=""></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -33,22 +33,22 @@
           <a routerLinkActive="active" routerLink="/user-login" class="nav-link" href="#">Entrar</a>
         </li>
         
-        <li *ngIf="navBarService.haveLogin" class="nav-item nav-link-user dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Usuário <img class="bi bi-person" src="" alt="">
-          </a>
-          <ul class="dropdown-menu" aria-label="Oi" name="" id="">
-            <li value=""><a href="#" class="dropdown-item"><i class="bi bi-pencil"></i> Editar</a></li>
-            <li (click)="userExits()" value=""><a href="#" class="dropdown-item"><i class="bi bi-backspace"></i> Sair</a></li>
-          </ul>
-        </li>
-        
         <li *ngIf="navBarService.haveNotLogin" class="nav-item nav-link-button">
           <a routerLinkActive="active" routerLink="/user-register">            
             <button class="btn btn-primary">Cadastrar</button>
           </a>
         </li>
         
+        <li *ngIf="navBarService.haveLogin" class="nav-item nav-link-user dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Usuário <img class="bi bi-person" src="" alt="">
+          </a>
+          <ul class="dropdown-menu" aria-label="Oi" name="" id="">
+            <li value=""><a href="#" class="dropdown-item" routerLink="/admin-reports"><i class="bi bi-gear"></i> Central</a></li>
+            <li value=""><a href="#" class="dropdown-item"><i class="bi bi-pencil"></i> Editar</a></li>
+            <li (click)="userExits()" value=""><a href="#" class="dropdown-item"><i class="bi bi-backspace"></i> Sair</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
