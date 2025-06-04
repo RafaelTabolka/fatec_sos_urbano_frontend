@@ -31,11 +31,11 @@ export const routes: Routes = [
     //     pathMatch: 'full',
     //     component: AboutUsComponent
     // },
-    // {
-    //     path: 'complaints',
-    //     pathMatch: 'full',
-    //     component: ComplaintsComponent
-    // },
+    {
+        path: 'complaints',
+        pathMatch: 'full',
+        component: ComplaintsComponent
+    },
     // {
     //     path: 'faq',
     //     pathMatch: 'full',
