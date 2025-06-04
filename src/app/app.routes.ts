@@ -26,31 +26,26 @@ export const routes: Routes = [
         pathMatch: 'full',
         component: HomeComponent
     },
-    // {
-    //     path: 'about-us',
-    //     pathMatch: 'full',
-    //     component: AboutUsComponent
-    // },
+    {
+        path: 'about-us',
+        pathMatch: 'full',
+        component: AboutUsComponent
+    },/*
     {
         path: 'complaints',
         pathMatch: 'full',
         component: ComplaintsComponent
     },
-    // {
-    //     path: 'faq',
-    //     pathMatch: 'full',
-    //     component: FaqComponent
-    // },
     {
         path: 'how-report',
         pathMatch: 'full',
         component: HowReportComponent
-    },
-    // {
-    //     path: 'terms-of-use',
-    //     pathMatch: 'full',
-    //     component: TermsOfUseComponent
-    // },
+    },/*
+    {
+        path: 'terms-of-use',
+        pathMatch: 'full',
+        component: TermsOfUseComponent
+    },*/
     {
         path: 'user-forget-it-password',
         pathMatch: 'full',

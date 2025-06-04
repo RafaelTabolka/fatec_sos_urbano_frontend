@@ -9,7 +9,7 @@ import { AboutUsComponent } from "./pages/about-us/about-us.component";
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, FooterComponent, AboutUsComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'vida-na-agua-frontend';
