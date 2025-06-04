@@ -1,1 +1,193 @@
-<p>complaints works!</p>
+<body>
+<div class="container">
+
+  <header class="header">
+    <h1>Denúncias</h1>
+  </header>
+
+  <!-- lugar de pesquisa -->
+  <div class="search-container">
+    <div class="search-box">
+      <input 
+        type="text" 
+        class="search-input" 
+        placeholder="Buscar por título..."
+        [(ngModel)]="searchTerm">
+
+      <!-- click no icone de filtro -->
+      <i class="bi bi-funnel search-icon" (click)="toggleFilter()"></i>
+      
+      <!-- dropdown do filtro -->
+      <div class="filter-dropdown" *ngIf="isFilterOpen">
+        <div class="filter-header">
+          <span>Filtrar por status</span>
+          <button class="filter-close" (click)="closeFilter()">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+        <div class="filter-options">
+          <div 
+            class="filter-option" 
+            [class.active]="selectedFilter === 'todos'"
+            (click)="selectFilter('todos')">
+            <span>Todos</span>
+          </div>
+          <div 
+            class="filter-option" 
+            [class.active]="selectedFilter === 'pendente'"
+            (click)="selectFilter('pendente')">
+            <span class="status-badge status-pendente">Pendente</span>
+          </div>
+          <div 
+            class="filter-option" 
+            [class.active]="selectedFilter === 'resolvido'"
+            (click)="selectFilter('resolvido')">
+            <span class="status-badge status-resolvido">Resolvido</span>
+          </div>
+          <div 
+            class="filter-option" 
+            [class.active]="selectedFilter === 'analise'"
+            (click)="selectFilter('analise')">
+            <span class="status-badge status-analise">Em Análise</span>
+          </div>
+          <div 
+            class="filter-option" 
+            [class.active]="selectedFilter === 'nao-resolvido'"
+            (click)="selectFilter('nao-resolvido')">
+            <span class="status-badge status-nao-resolvido">Não Resolvido</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- mostrar filtro ativo -->
+    <div class="filter-indicator" *ngIf="selectedFilter !== 'todos'">
+      <span>Filtro: {{ getFilterLabel() }}</span>
+      <button class="clear-filter" (click)="selectFilter('todos')">
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <main class="content">
+
+    <div class="reports-grid">
+      <article class="report-card" *ngFor="let complaint of getFilteredComplaints(); let i = index">
+        <img [src]="complaint.image" [alt]="complaint.title" class="report-image">
+        <div class="report-content">
+          <h3 class="report-title">{{ complaint.title }}</h3>
+          <span class="status-badge" [ngClass]="'status-' + complaint.status">
+            {{ complaint.statusLabel }}
+          </span>
+          <button class="ver-mais-btn" (click)="openModal(complaint)">Ver Mais</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- mensagem de quando não houver resultados -->
+    <div class="empty-state" *ngIf="getFilteredComplaints().length === 0">
+      <h3>Nenhuma denúncia encontrada</h3>
+      <p>Tente ajustar os filtros ou termo de busca.</p>
+    </div>
+
+    <!-- paginação -->
+    <nav class="pagination" *ngIf="totalPages > 1">
+      <!-- btn anterior -->
+      <button 
+        class="pagination-arrow" 
+        [class.disabled]="currentPage === 1"
+        [disabled]="currentPage === 1"
+        (click)="goToPreviousPage()"
+        type="button">
+        ‹
+      </button>
+      
+      <!-- numeros das páginas -->
+      <button 
+        class="pagination-number" 
+        *ngFor="let page of getPageNumbers()"
+        [class.active]="page === currentPage"
+        (click)="goToPage(page)"
+        type="button">
+        {{ page }}
+      </button>
+
+      <!-- btn próximo -->
+      <button 
+        class="pagination-arrow" 
+        [class.disabled]="currentPage === totalPages"
+        [disabled]="currentPage === totalPages"
+        (click)="goToNextPage()"
+        type="button">
+        ›
+      </button>
+    </nav>
+  </main>
+
+  <!-- modal -->
+  <div 
+      class="modal-backdrop" 
+      *ngIf="isModalOpen"
+      (click)="onModalBackdropClick($event)">
+      <div class="modal-content" *ngIf="selectedComplaint">
+
+          <div class="modal-header">
+              <h2 class="modal-title">{{ selectedComplaint.title }}</h2>
+              <button class="modal-close-btn" (click)="closeModal()">
+                  <i class="bi bi-x"></i>
+              </button>
+          </div>
+
+          <!-- body do modal -->
+          <div class="modal-body">
+
+              <!-- imagem dentro do modal -->
+              <div class="modal-image-container">
+                  <img 
+                      [src]="selectedComplaint.image" 
+                      [alt]="selectedComplaint.title"
+                      class="modal-image">
+              </div>
+
+              <!-- status dentro do modal -->
+              <div class="modal-status">
+                  <span 
+                      class="status-badge"
+                      [ngClass]="'status-' + selectedComplaint.status">
+                      {{ selectedComplaint.statusLabel }}
+                  </span>
+              </div>
+
+              <!-- descrição -->
+              <div class="modal-description">
+                  <p>{{ selectedComplaint.description }}</p>
+              </div>
+
+              <!-- detalhes -->
+              <div class="modal-details">
+                  <div class="detail-item">
+                      <strong>Data de criação:</strong> {{ selectedComplaint.creationDate }}
+                  </div>
+                  <div class="detail-item">
+                      <strong>Data de resolução:</strong> 
+                      {{ selectedComplaint.resolutionDate || '--' }}
+                  </div>
+                  <div class="detail-item">
+                      <strong>Local:</strong> {{ selectedComplaint.location }}
+                  </div>
+              </div>
+          </div>
+
+          <!-- modal fotter -->
+          <div class="modal-footer">
+              <button class="modal-close-button" (click)="closeModal()">
+                  Fechar
+              </button>
+          </div>
+      </div>
+  </div>
+
+  <!-- fechar o filtro clicando fora -->
+  <div class="filter-overlay" *ngIf="isFilterOpen" (click)="closeFilter()"></div>
+</div>
+</body>
