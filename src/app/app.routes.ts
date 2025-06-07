@@ -26,11 +26,11 @@ export const routes: Routes = [
         pathMatch: 'full',
         component: HomeComponent
     },
-    // {
-    //     path: 'about-us',
-    //     pathMatch: 'full',
-    //     component: AboutUsComponent
-    // },
+    {
+        path: 'about-us',
+        pathMatch: 'full',
+        component: AboutUsComponent
+    },
     {
         path: 'complaints',
         pathMatch: 'full',

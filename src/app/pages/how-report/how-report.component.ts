@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { NavBarService } from '../../services/nav-bar.service';
+import { RevealOnScrollDirective } from '../../shared/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-how-report',
   standalone: true,
-  imports: [],
+  imports: [RevealOnScrollDirective],
   templateUrl: './how-report.component.html',
   styleUrl: './how-report.component.css'
 })
