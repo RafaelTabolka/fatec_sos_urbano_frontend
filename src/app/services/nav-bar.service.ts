@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,7 +8,9 @@ export class NavBarService {
   public haveLogin: boolean = false;
   public haveNotLogin: boolean = true;
 
-  constructor() { }
+  constructor(
+   
+  ) { }
 
   modifyStateLogin() {
     this.haveLogin = !this.haveLogin;

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NavBarService } from '../../services/nav-bar.service';
 import { Router, RouterLink } from '@angular/router';
+import { RevealOnScrollDirective } from '../../shared/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, RevealOnScrollDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

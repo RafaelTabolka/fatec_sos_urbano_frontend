@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavBarService } from '../../../services/nav-bar.service';
+import { RevealOnScrollDirective } from '../../../shared/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-user-make-report',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, RevealOnScrollDirective],
   templateUrl: './user-make-report.component.html',
   styleUrl: './user-make-report.component.css'
 })

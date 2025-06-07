@@ -30,7 +30,7 @@ export const routes: Routes = [
         path: 'about-us',
         pathMatch: 'full',
         component: AboutUsComponent
-    },/*
+
     {
         path: 'complaints',
         pathMatch: 'full',

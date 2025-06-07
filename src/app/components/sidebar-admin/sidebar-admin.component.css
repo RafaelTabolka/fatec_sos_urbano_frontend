@@ -1,22 +1,30 @@
+/* Menu admin */
+.offcanvas {
+    background-color: transparent;
+    border-right: none;
+}
+
 .sidebar {
     background-color: #06577E;
     height: 100vh;
     width: 80%;
-    text-align: center;
+    overflow-y: auto;   
 }
 
-.offcanvas {
-    background-color: transparent;
+@media (min-width: 400px) {
+    .sidebar {
+        width: 320px;
+    }
 }
 
 .offcanvas-header {
     outline: 2px solid black;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     position: fixed;
-    padding: 0;
+    padding: 2px;
 }
 
 .offcanvas-header button {
@@ -35,9 +43,10 @@
     position: fixed;
 }
 
+/* Logo SOSUrbano */
 .container {
     outline: 1px solid red;
-    padding-top: 30px;
+    padding-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,8 +58,15 @@
     height: auto;
 }
 
+@media (min-width:350px) {
+    .img-logo {
+        width: 150px;
+    }
+}
+
+
+/* Linha de separação */
 .separation {
-    margin-top: 30px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -61,14 +77,71 @@
     width: 90%;
 }
 
-.teste {
-    outline: 1px solid red;
-    width: 100px;
-    margin-left: 10px;
-    text-align: center;
+/* Componentes do menu admin */
+.offcanvas-body {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.offcanvas-body .navbar-nav {
+    padding-left: 16px;
 }
 
 .offcanvas-body .navbar-nav .nav-item .nav-link {
     color: #E8E8E8;
-    
+    display: flex;
+    align-items: center;   
+    font-size: 20px;
+    padding-right: 16px; 
+}
+
+@media (min-width: 350px) {
+    .offcanvas-body .navbar-nav .nav-item .nav-link { 
+        font-size: 22px;
+    }
+}
+
+.offcanvas-body .navbar-nav .nav-item .nav-link.active {
+    background-color: #84CCF4;
+    color: #292727;
+    border-radius: 8px 0px 0px 8px; 
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.offcanvas-body .navbar-nav .nav-item .nav-link p{
+    margin: 0px;
+}
+
+.offcanvas-body .navbar-nav .nav-item .nav-link .bi {
+    outline: 1px solid red;
+    margin-right: 10px;   
+    padding-left: 5px;
+}
+
+/* Menu inferior admin */
+.sidebar-space {
+    flex-grow: 1;
+    outline: 1px solid red;
+}
+
+.offcanvas-body-user {
+    background-color: #076591;
+    outline: 1px solid red;
+    padding: 5px 0px 5px 16px;
+    font-size: 20px;
+}
+
+@media (min-width: 400px) {
+    .offcanvas-body-user {
+        width: 320px;
+    }
+}
+
+.offcanvas-body-user .navbar-nav .nav-item .nav-link {
+    color: #E8E8E8;
+}
+.offcanvas-body-user .navbar-nav {
+    padding-left: 0px;
 }
