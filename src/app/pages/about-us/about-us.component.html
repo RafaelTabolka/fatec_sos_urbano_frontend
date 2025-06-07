@@ -1,29 +1,59 @@
-<div class="container">
-    <!-- Quem somos -->
-    <div class="column mb-4" id="toggle-0">
-      <button class="toggle-btn" data-bs-toggle="collapse" data-bs-target="#tab-0" aria-expanded="false" aria-controls="tab-0"></button>
-      <span>Quem somos</span>
-    </div>
-    <div class="collapse tab" id="tab-0">
-      <p>Somos uma equipe dedicada a melhorar a infraestrutura de água e saneamento da sua comunidade. Nosso objetivo é proporcionar um canal seguro e eficiente para que você possa denunciar problemas como vazamentos, entupimentos e falhas no sistema de esgoto e encanamento.</p>
-      <p>Nosso site funciona como um elo entre os cidadãos e os responsáveis pelos serviços de água e esgoto, garantindo que as denúncias sejam direcionadas aos órgãos competentes para uma resolução ágil e eficaz.</p>
-    </div>
+<div class="about-us-outer">
+  <div class="container my-4">
+    <div class="accordion" id="accordionExample">
 
-    <!-- Equipe -->
-    <div class="column mb-4" id="toggle-1">
-      <button class="toggle-btn" data-bs-toggle="collapse" data-bs-target="#tab-1" aria-expanded="false" aria-controls="tab-1"></button>
-      <span>Equipe</span>
-    </div>
-    <div class="collapse tab" id="tab-1">
-      <a href="https://via.placeholder.com/150" target="_blank">Veja nossa imagem</a>
-    </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Quem somos
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Somos uma equipe dedicada a melhorar a infraestrutura de água e saneamento da sua comunidade.
+            Nosso objetivo é proporcionar um canal seguro e eficiente para que você possa denunciar problemas como vazamentos,
+            entupimentos e falhas no sistema de esgoto e encanamento.<br><br>
+            Nosso site funciona como um elo entre os cidadãos e os responsáveis pelos serviços de água e esgoto, garantindo que
+            as denúncias sejam direcionadas aos órgãos competentes para uma resolução ágil e eficaz.
+          </div>
+        </div>
+      </div>
 
-    <!-- Qual o nosso objetivo -->
-    <div class="column mb-4" id="toggle-2">
-      <button class="toggle-btn" data-bs-toggle="collapse" data-bs-target="#tab-2" aria-expanded="false" aria-controls="tab-2"></button>
-      <span>Qual o nosso objetivo</span>
-    </div>
-    <div class="collapse tab" id="tab-2">
-      <p>Nosso objetivo é garantir o acesso de todos a água potável e a um sistema de esgoto adequado, contribuindo para a saúde e o bem-estar da comunidade. Acreditamos que cada cidadão tem o direito de viver em um ambiente seguro e livre de riscos decorrentes de falhas no abastecimento de água e esgoto.</p>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Equipe
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body d-flex flex-column align-items-center">
+            <strong>Membros da equipe:</strong>
+            <ul class="mb-3">
+              <li>Gilmar Ricardo</li>
+              <li>Rafael Tabolka</li>
+              <li>Uadrian da Silva</li>
+              <li>Vitor Reina</li>
+            </ul>
+            <a href="https://via.placeholder.com/150" target="_blank">Veja nossa imagem</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Qual o nosso objetivo
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Nosso objetivo é garantir o acesso de todos a água potável e a um sistema de esgoto adequado,
+            contribuindo para a saúde e o bem-estar da comunidade. Acreditamos que cada cidadão tem o
+            direito de viver em um ambiente seguro e livre de riscos decorrentes de falhas no abastecimento de água e esgoto.
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
+</div>
