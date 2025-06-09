@@ -1,1 +1,75 @@
-<app-sidebar-admin></app-sidebar-admin>
+<nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="bi bi-funnel"></i></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <h2>Filtros</h2>
+            <form>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">
+                                Data Início
+                            </label>
+                            <input type="date" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">
+                                Data Fim
+                            </label>
+                            <input type="date" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Status
+                            </label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected value="0">Selecionar</option>
+                                <option value="4">Arquivado</option>
+                                <option value="3">Concluído</option>
+                                <option value="2">Em andamento</option>
+                                <option value="1">Pendente</option>
+                                <option value="1">Recebido</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Endereço
+                            </label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected value="0">Selecionar</option>
+                                <option value="4">Endereço 1</option>
+                                <option value="3">Endereço 2</option>
+                                <option value="2">Endereço 3</option>
+                                <option value="1">Endereço 4</option>
+                                <option value="1">Endereço 5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 button-apply">
+                        <button class="btn btn-primary">
+                            Aplicar <i class="bi bi-funnel"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>

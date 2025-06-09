@@ -1,0 +1,10 @@
+.admin-content {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .admin-content {
+        flex-direction: row;
+    }
+}

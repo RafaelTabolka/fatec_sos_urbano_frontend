@@ -14,81 +14,40 @@ import { AdminInstitutionsComponent } from './pages/admin/admin-institutions/adm
 import { AdminManageIncidentsComponent } from './pages/admin/admin-manage-incidents/admin-manage-incidents.component';
 import { AdminStatisticsComponent } from './pages/admin/admin-statistics/admin-statistics.component';
 import { AdminUsersComponent } from './pages/admin/admin-users/admin-users.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 export const routes: Routes = [
     {
         path: '',
-        pathMatch: 'full',
-        redirectTo: 'home'
+        component: MainLayoutComponent,
+        children: [
+            {path: '', pathMatch: 'full', redirectTo: 'home'},
+            {path: 'home', pathMatch: 'full', component: HomeComponent},
+            {path: 'about-us', pathMatch: 'full', component: AboutUsComponent},
+            {path: 'complaints', pathMatch: 'full', component: ComplaintsComponent},
+            {path: 'how-report', pathMatch: 'full', component: HowReportComponent},
+            // {path: 'terms-of-use',pathMatch: 'full',component: TermsOfUseComponent},
+            {path: 'user-forget-it-password', pathMatch: 'full', component: UserForgetItPasswordComponent},
+            {path: 'user-login', pathMatch: 'full', component: UserLoginComponent},
+            {path: 'user-make-report', pathMatch: 'full', component: UserMakeReportComponent},
+            {path: 'user-register', pathMatch: 'full', component: UserRegisterComponent},
+        ]
     },
     {
-        path: 'home',
-        pathMatch: 'full',
-        component: HomeComponent
+        path: '',
+        component: AdminLayoutComponent,
+        children: [
+            {path: 'admin-institutions', pathMatch: 'full', component: AdminInstitutionsComponent},
+            {path: 'admin-manage-incidents', pathMatch: 'full', component: AdminManageIncidentsComponent},
+            {path: 'admin-reports', pathMatch: 'full', component: AdminReportsComponent},
+            {path: 'admin-statistics', pathMatch: 'full', component: AdminStatisticsComponent},
+            {path: 'admin-users', pathMatch: 'full', component: AdminUsersComponent}
+        ]
     },
     {
-        path: 'about-us',
-        pathMatch: 'full',
-        component: AboutUsComponent
-
-    {
-        path: 'complaints',
-        pathMatch: 'full',
-        component: ComplaintsComponent
-    },
-    {
-        path: 'how-report',
-        pathMatch: 'full',
-        component: HowReportComponent
-    },/*
-    {
-        path: 'terms-of-use',
-        pathMatch: 'full',
-        component: TermsOfUseComponent
-    },*/
-    {
-        path: 'user-forget-it-password',
-        pathMatch: 'full',
-        component: UserForgetItPasswordComponent
-    },
-    {
-        path: 'user-login',
-        pathMatch: 'full',
-        component: UserLoginComponent
-    },
-    {
-        path: 'user-make-report',
-        pathMatch: 'full',
-        component: UserMakeReportComponent
-    },
-    {
-        path: 'user-register',
-        pathMatch: 'full',
-        component: UserRegisterComponent
-    },
-    {
-        path: 'admin-institutions',
-        pathMatch: 'full',
-        component: AdminInstitutionsComponent
-    },
-    {
-        path: 'admin-manage-incidents',
-        pathMatch: 'full',
-        component: AdminManageIncidentsComponent
-    },
-    {
-        path: 'admin-reports',
-        pathMatch: 'full',
-        component: AdminReportsComponent
-    },
-    {
-        path: 'admin-statistics',
-        pathMatch: 'full',
-        component: AdminStatisticsComponent
-    },
-    {
-        path: 'admin-users',
-        pathMatch: 'full',
-        component: AdminUsersComponent
+        path: '**', redirectTo: 'home'
     }
+
+
 ];

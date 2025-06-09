@@ -1,0 +1,14 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+.row .col-12.button-apply .btn-primary {
+    text-align: center;
+    width: 100%;
+}
