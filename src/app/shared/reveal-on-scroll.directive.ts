@@ -23,7 +23,7 @@ export class RevealOnScrollDirective implements AfterViewInit {
       ([entry]) => {
         if (entry.isIntersecting) { // Está verificando se o elemento apareceu na tela.
           this.renderer.addClass(this.el.nativeElement, 'reveal-visible'); // Aqui estamos adicionando uma classe chamada 'reveal-visible'. É uma classe css para animar o elemento passado no primeiro argumento da função "addClass".
-          observer.unobserve(this.el.nativeElement) // Depois que animou o elemento, o "unobserve" paa de observar o elemento para que não consuma processamento atoa.
+          observer.unobserve(this.el.nativeElement) // Depois que animou o elemento, o "unobserve" para de observar o elemento para que não consuma processamento desnecessário.
         }
       },
       { threshold: 0.1 } // Tempo de animação
