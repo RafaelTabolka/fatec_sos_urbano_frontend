@@ -225,6 +225,16 @@ body {
   background-color: #6a0dad;
 }
 
+.error-message {
+  color: #d32f2f;
+  font-size: 0.8em;
+  margin-top: 4px; 
+  margin-bottom: 8px; 
+  text-align: left;
+  width: 100%;
+  padding-left: 2px; 
+}
+
 /* parte de responsividade */
 @media (max-width: 768px) {
   .form-container {

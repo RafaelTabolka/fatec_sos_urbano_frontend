@@ -2,69 +2,57 @@
   <div class="container">
       <div class="heading">Cadastrar-se</div>
       <form [formGroup]="formRegister" action="" class="form">
-        <input 
-        required="" 
-        class="input" 
-        type="text" 
-        name="name" 
-        id="nome" 
-        placeholder="Nome Completo"
-        formControlName="completeName">
-        
-        <input 
-        required="" 
-        class="input" 
-        type="email" 
-        name="email" 
-        id="email" 
-        placeholder="E-mail"
-        formControlName="email">
-        
-        <input 
-        required="" 
-        class="input" 
-        type="text" 
-        name="cpf" 
-        id="cpf" 
-        placeholder="CPF"
-        formControlName="cpf">
-        
-        <input 
-        required="" 
-        class="input" 
-        type="number" 
-        name="tel" 
-        id="telefone" 
-        placeholder="Telefone"
-        formControlName="phone">
-        
-        <input 
-        required="" 
-        class="input" 
-        type="password" 
-        name="password" 
-        id="password" 
-        placeholder="Senha"
-        formControlName="password">
 
-        <input 
-        required="" 
-        class="input" 
-        type="password" 
-        name="confirmPassword" 
-        id="confirmPassword" 
-        placeholder="Confirmar Senha"
-        formControlName="confirmPassword">
+  <input formControlName="completeName" class="input" type="text" placeholder="Nome Completo" appOnlyLetters>
+  <div *ngIf="f['completeName'].invalid && (f['completeName'].dirty || f['completeName'].touched)" class="error-message">
+  <div *ngIf="f['completeName'].hasError('required')">
+    O nome completo é obrigatório.
+  </div>
+</div>
 
-        <span class="forgot-password"><a routerLink="/user-login"> Ja tem uma conta ? Entrar </a></span>
-        
-        <input 
-        (click)="onSubmit()" 
-        class="login-button" 
-        type="submit" 
-        value="Cadastrar"
-        [disabled]="!formRegister.valid">
-      </form>
+  <input formControlName="email" class="input" type="email" placeholder="E-mail">
+  <div *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)" class="error-message">
+    <div *ngIf="f['email'].hasError('required')">O e-mail é obrigatório.</div>
+    <div *ngIf="f['email'].hasError('email')">Por favor, insira um e-mail válido.</div>
+  </div>
+  
+  <input formControlName="cpf" class="input" type="text" placeholder="CPF" appOnlyNumbers>
+  <div *ngIf="f['cpf'].invalid && (f['cpf'].dirty || f['cpf'].touched)" class="error-message">
+    <div *ngIf="f['cpf'].hasError('required')">O CPF é obrigatório.</div>
+    <div *ngIf="f['cpf'].hasError('minlength') || f['cpf'].hasError('maxlength')">O CPF deve conter exatamente 11 dígitos.</div>
+  </div>
+
+  <input formControlName="phone" class="input" type="text" placeholder="Telefone" appOnlyNumbers>
+  <div *ngIf="f['phone'].invalid && (f['phone'].dirty || f['phone'].touched)" class="error-message">
+    <div *ngIf="f['phone'].hasError('required')">O telefone é obrigatório.</div>
+    <div *ngIf="f['phone'].hasError('minlength')">O telefone deve ter no mínimo 10 dígitos.</div>
+  </div>
+  
+  <input formControlName="password" class="input" type="password" placeholder="Senha">
+  <div *ngIf="f['password'].invalid && (f['password'].dirty || f['password'].touched)" class="error-message">
+    <div *ngIf="f['password'].hasError('required')">A senha é obrigatória.</div>
+    <div *ngIf="f['password'].hasError('minlength')">A senha precisa ter no mínimo 6 caracteres.</div>
+  </div>
+
+  <input 
+  formControlName="confirmPassword" 
+  class="input" 
+  type="password" 
+  placeholder="Confirmar Senha">
+  
+<div *ngIf="f['confirmPassword'].invalid && (f['confirmPassword'].dirty || f['confirmPassword'].touched)" class="error-message">
+    <div *ngIf="f['confirmPassword'].hasError('required')">
+        A confirmação de senha é obrigatória.
+    </div>
+    <div *ngIf="f['confirmPassword'].hasError('mismatch')">
+        As senhas não coincidem.
+    </div>
+</div>
+
+  <span class="forgot-password"><a routerLink="/user-login"> Ja tem uma conta ? Entrar </a></span>
+    
+  <input (click)="onSubmit()" class="login-button" type="submit" value="Cadastrar" [disabled]="!formRegister.valid">
+</form>
       
       <div class="social-account-container">
           <span class="title">Ou entre com</span>

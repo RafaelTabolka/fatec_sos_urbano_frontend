@@ -11,8 +11,8 @@ import { NavBarService } from '../../services/nav-bar.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  // haveLogin:boolean = false;
-  // haveNotLogin:boolean = true;
+  haveLogin:boolean = false;
+  haveNotLogin:boolean = true;
 
   constructor(
     public navBarService: NavBarService,
@@ -20,8 +20,9 @@ export class NavbarComponent {
 
   userExits () {
     this.navBarService.modifyStateLogin()
-    localStorage.setItem('haveLogin', JSON.stringify(this.navBarService.haveLogin))
-    localStorage.setItem('haveNotLogin', JSON.stringify(this.navBarService.haveNotLogin))
+    localStorage.setItem('haveLogin', JSON.stringify(this.haveLogin))
+    localStorage.setItem('haveNotLogin', JSON.stringify(this.haveNotLogin))
+    localStorage.clear();
     this.router.navigateByUrl('/home')
   }
 
