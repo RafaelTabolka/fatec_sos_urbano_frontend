@@ -6,5 +6,15 @@
 @media (min-width: 768px) {
     .admin-content {
         flex-direction: row;
+        /* width: 100%; */
+    }
+    
+    app-sidebar-admin {
+        position: fixed;
+    }
+
+    .admin-main {
+        margin-left: 220px;
+        flex: 1;
     }
 }

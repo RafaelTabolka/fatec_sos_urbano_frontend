@@ -1,8 +1,17 @@
-/* * {
-    outline: 1px solid red;
-} */
-
 /* Menu admin */
+.navbar-toggler {
+    font-size: 35px;
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
 .offcanvas {
     background-color: transparent;
     border-right: none;
@@ -38,7 +47,6 @@
     }
 
     .sidebar {
-        /* outline: 1px solid red; */
         width: 220px !important;
     }
 }
@@ -59,7 +67,6 @@
 }
 
 .offcanvas-header {
-    /* outline: 2px solid black; */
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -86,7 +93,6 @@
 
 /* Logo SOSUrbano */
 .container {
-    /* outline: 1px solid red; */
     padding-top: 40px;
     display: flex;
     flex-direction: column;
@@ -164,7 +170,6 @@
 }
 
 .offcanvas-body .navbar-nav .nav-item .nav-link .bi {
-    /* outline: 1px solid red; */
     margin-right: 10px;
     padding-left: 5px;
 }
@@ -172,23 +177,10 @@
 /* Menu inferior admin */
 .offcanvas-body-user {
     background-color: #076591;
-    /* outline: 1px solid red; */
     padding: 5px 0px 5px 16px;
     font-size: 20px;
     width: 100%;
 }
-
-/* @media (min-width: 400px) {
-    .offcanvas-body-user {
-        width: 320px;
-    }
-} */
-
-/* @media (min-width: 768px) {
-    .offcanvas-body-user {
-        width: 220px;
-    }
-} */
 
 .offcanvas-body-user .navbar-nav .nav-item .nav-link {
     color: #E8E8E8;
