@@ -1,15 +1,17 @@
+<!-- Formulário Filtros -->
 <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span><i class="bi bi-funnel"></i></span>
-        </button>
-        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <h2>Filtros</h2>
+            <!-- Início Formulário -->
             <form>
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <h2>Filtros</h2>
+                    </div>
+                </div>
+
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-custom-6">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">
                                 Data Início
@@ -19,7 +21,7 @@
                         </div>
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-12 col-custom-6">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">
                                 Data Fim
@@ -29,7 +31,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-12 col-md-6 col-custom-3">
                         <div class="mb-3">
                             <label class="form-label">
                                 Status
@@ -45,7 +47,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-12 col-md-6 col-custom-3">
                         <div class="mb-3">
                             <label class="form-label">
                                 Endereço
@@ -62,8 +64,9 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-12 button-apply">
+                <!-- Botão Formulário Filtro -->
+                <div class="row align-button-apply mt-3">
+                    <div class="col-12 btn-apply">
                         <button class="btn btn-primary">
                             Aplicar <i class="bi bi-funnel"></i>
                         </button>
@@ -73,3 +76,25 @@
         </div>
     </div>
 </nav>
+
+<!-- Cartões -->
+ <div class="container-fluid-card">
+    <div class="row">
+        <div class="col-12 col-custom">
+            <span class="text-inside-card">Qtde de Usuários</span> 
+            <span class="font-number-metric">0</span>
+        </div>
+        <div class="col-12 col-custom">
+            <span class="text-inside-card">Qtde de Denúncias</span>
+            <span class="font-number-metric">0</span>
+        </div>
+        <div class="col-12 col-custom">
+            <span class="text-inside-card">Denúncias Resolvidas</span>
+            <span class="font-number-metric">0</span>
+        </div>
+        <div class="col-12 col-custom">
+            <span class="text-inside-card">Tempo médio de resolução</span>
+            <span class="font-number-metric">0</span>
+        </div>
+    </div>
+ </div>
