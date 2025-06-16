@@ -7,7 +7,6 @@
     }
 }
 
-
 /* Início Formulário */
 form {
     width: 100%;
@@ -145,7 +144,7 @@ form {
 }
 
 .container-fluid-card .row {
-    margin: 10px 12px 10px 12px;
+    margin: 0px 12px 0px 12px;
 }
 
 @media (min-width: 576px) {
@@ -170,8 +169,6 @@ form {
 
 @media (min-width: 576px) {
     .container-fluid-card .row {
-        /* flex: 0 0 auto;
-        width: 47%; */
         justify-content: space-between;
     }
 
@@ -194,4 +191,54 @@ form {
 
 .container-fluid-card .row .col-12 .font-number-metric {
     font-size: 70px;
+}
+
+.container-fluid-charts {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+    outline: 1px solid rgba(41, 39, 39, 0.2);
+    border-radius: 5px;
+    margin: 0px 12px 0px 12px;
+    background-color: #06577e21;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .container-fluid-charts {
+        margin: 0px 27px 15px 27px;
+    }
+}
+
+@media (min-width: 2000px) {
+    .align-charts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 15px 0px 15px;
+    }
+    .container-fluid-charts {
+        width: 90%;
+    }
+}
+
+.container-fluid-charts .row {
+    width: 100%;
+    padding: 5px;
+}
+
+.container-fluid-charts .row .col-12 h3 {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    /* margin-bottom: 100px; */
+}
+
+.container-fluid-charts .row .col-12 #bar-chart,
+.container-fluid-charts .row .col-12 #pie-chart {
+    max-height: 500px;
+    /* padding: 100px; */
+    /* height: unset !important;
+    width: unset !important; */
 }
