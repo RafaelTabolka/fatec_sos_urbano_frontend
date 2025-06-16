@@ -1,0 +1,125 @@
+/* Fomulário Filtros */
+@media (min-width: 768px) {
+    .navbar-collapse {
+        /* outline: 1px solid red; */
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Início Formulário */
+form {
+    width: 100%;
+    /* outline: 1px solid black; */
+    background-color: rgb(175, 208, 238, 0.15);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+    padding: 10px 25px 10px 25px;
+    outline: 1px solid rgba(41, 39, 39, 0.2);
+    border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+    form {
+        margin: 10px 15px 0px 15px;
+    }
+}
+
+@media (min-width: 2000px) {
+    form {
+        width: 90%;
+    }
+
+}
+
+.row .col-12 h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .row .col-12 h2 {
+        text-align: start;
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 350px) {
+    .row .col-custom-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .row .col-custom-6 {
+        width: 25%;
+    }
+
+    .row .col-custom-3 {
+        width: 25%;
+    }
+}
+
+.row .col-custom-6 .mb-3 .form-control,
+.row .col-12 .mb-3 .form-select {
+    outline: 1px solid #292727;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    /* outline: 1px solid red; */
+}
+
+@media (min-width: 576px) {
+
+    .navbar,
+    .row .col-custom-6 .mb-3 .form-control,
+    .row .col-12 .mb-3 .form-select,
+    .row .col-12.btn-apply .btn-primary {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        font-size: 25px;
+    }
+}
+
+/* Botão Formulário Filtro*/
+.row .col-12.btn-apply .btn-primary {
+    text-align: center;
+    width: 100%;
+    font-size: 17px;
+    background-color: #076591;
+    border: 1px solid #06577E;
+}
+
+.row .col-12.btn-apply .btn-primary:hover {
+    background-color: #088bc8;
+}
+
+@media (min-width: 576px) {
+    .row .col-12.btn-apply .btn-primary {
+        font-size: 23px;
+    }
+}
+
+@media (min-width: 992px) {
+    .row .col-12.btn-apply {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        /* outline: 1px solid black; */
+    }
+
+    .row .col-12.btn-apply .btn-primary {
+        width: 40%;
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .row .col-12.btn-apply .btn-primary {
+        width: 30%;
+        font-size: 28px;
+    }
+}
