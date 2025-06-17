@@ -125,15 +125,63 @@ form {
 
 /* Tabela */
 .table-responsive {
-    outline: 1px solid red;
-    /* display: flex;
-    justify-content: center; */
+    margin: 0px 12px 0px 12px;
 }
 
 .table-responsive .table {
     text-align: center;
+    font-size: 20px;
+    border: 1px solid rgba(42, 40, 40, 0.2);
 }
 
-.table-responsive .table-striped {
-    background-color: black;
+.table-responsive .table-head {
+    background-color: #1F78B4;
+    color: #E8E8E8;
+}
+
+.accordion-button {
+    width: unset;
+    display: unset;
+    padding: 0;
+}
+
+.accordion-button::after {
+    display: flex;
+}
+
+/* Menu collapse */
+.collapse-content-father {
+    background-color: #D3EAFF;
+    padding: 5px;
+    border: 1px solid rgba(7, 101, 145, 0.3);
+    border-radius: 5px;
+}
+
+.collapse-content {
+    text-align: start;
+}
+
+.collapse-content-father .row .col-6 {
+    padding: 0px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.collapse-content-father .row .col-align-right {
+    align-items: flex-end;
+    border-right: 1px solid rgba(41, 39, 39, 0.2);
+}
+
+.collapse-content-father .row .col-align-left {
+    align-items: flex-start;
+}
+
+.collapse-content-father .row .col-6 span {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.collapse-content-father .row .col-6 span:hover {
+    color: #06577E;
 }
