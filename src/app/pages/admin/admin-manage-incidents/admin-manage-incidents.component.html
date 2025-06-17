@@ -11,6 +11,38 @@
                 </div>
 
                 <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Nome Usuário
+                            </label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected value="0">Selecionar</option>
+                                <option value="4">Nome 1</option>
+                                <option value="3">Nome 2</option>
+                                <option value="2">Nome 3</option>
+                                <option value="1">Nome 4</option>
+                                <option value="1">Nome 5</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Descrição
+                            </label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected value="0">Selecionar</option>
+                                <option value="4">Testando a descrição vindo da API 1</option>
+                                <option value="3">Testando a descrição vindo da API 2</option>
+                                <option value="2">Testando a descrição vindo da API 3</option>
+                                <option value="1">Testando a descrição vindo da API 4</option>
+                                <option value="1">Testando a descrição vindo da API 5</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="col-12 col-custom-6">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">
@@ -31,7 +63,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-6 col-custom-3">
+                    <div class="col-12 col-sm-6 col-xxl-6">
                         <div class="mb-3">
                             <label class="form-label">
                                 Status
@@ -47,21 +79,39 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-6 col-custom-3">
+                    <div class="col-12 col-sm-6 col-xl-4">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Instituição
+                            </label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected value="0">Selecionar</option>
+                                <option value="4">Instituição 1</option>
+                                <option value="3">Instituição 2</option>
+                                <option value="2">Instituição 3</option>
+                                <option value="1">Instituição 4</option>
+                                <option value="1">Instituição 5</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xl-8">
                         <div class="mb-3">
                             <label class="form-label">
                                 Endereço
                             </label>
                             <select class="form-select" aria-label="Default select example">
                                 <option selected value="0">Selecionar</option>
-                                <option value="4">Endereço 1</option>
-                                <option value="3">Endereço 2</option>
-                                <option value="2">Endereço 3</option>
-                                <option value="1">Endereço 4</option>
-                                <option value="1">Endereço 5</option>
+                                <option value="4">Testando endereço vindo da API 1</option>
+                                <option value="3">Testando endereço vindo da API 2</option>
+                                <option value="2">Testando endereço vindo da API 3</option>
+                                <option value="1">Testando endereço vindo da API 4</option>
+                                <option value="1">Testando endereço vindo da API 5</option>
                             </select>
                         </div>
                     </div>
+
+
                 </div>
 
                 <!-- Botão Formulário Filtro -->
@@ -76,3 +126,85 @@
         </div>
     </div>
 </nav>
+
+<!-- Tabela -->
+<div class="table-responsive">
+    <table class="table table-striped table-dark">
+        <thead class="">
+            <th scope="col">Descrição</th>
+            <th scope="col">Data Denúncia</th>
+            <th scope="col">Status</th>
+            <th scope="col">Detalhe</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Testando1</td>
+                <td>Testando2</td>
+                <td>Testando3</td>
+                <td>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    teste
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Testando1</td>
+                <td>Testando2</td>
+                <td>Testando3</td>
+                <td>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    teste
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>testando1</td>
+                <td>testando2</td>
+                <td>testando3</td>
+                <td>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    teste
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

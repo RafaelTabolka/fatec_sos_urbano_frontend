@@ -51,14 +51,14 @@ form {
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .row .col-custom-6 {
         width: 25%;
     }
 
-    .row .col-custom-3 {
+    /* .row .col-custom-3 {
         width: 25%;
-    }
+    } */
 }
 
 .row .col-custom-6 .mb-3 .form-control,
@@ -69,7 +69,6 @@ form {
 }
 
 @media (min-width: 576px) {
-
     .navbar,
     .row .col-custom-6 .mb-3 .form-control,
     .row .col-12 .mb-3 .form-select,
@@ -122,4 +121,19 @@ form {
         width: 30%;
         font-size: 28px;
     }
+}
+
+/* Tabela */
+.table-responsive {
+    outline: 1px solid red;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.table-responsive .table {
+    text-align: center;
+}
+
+.table-responsive .table-striped {
+    background-color: black;
 }
