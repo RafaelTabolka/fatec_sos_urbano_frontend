@@ -8,13 +8,15 @@
         flex-direction: row;
         /* width: 100%; */
     }
-    
+
     app-sidebar-admin {
         position: fixed;
     }
 
     .admin-main {
         margin-left: 220px;
+        /* Esse min-width deixa o conteúdo encolher o quanto for necessário para caber no container. Bom para table-responsive */
+        min-width: 0;
         flex: 1;
     }
 }
