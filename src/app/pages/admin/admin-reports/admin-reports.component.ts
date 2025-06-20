@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 Chart.register(...registerables)
@@ -65,8 +65,7 @@ export class AdminReportsComponent implements OnInit {
             // label: 'Região',
             data: [100, 20, 15, 20, 20, 20, 20, 20, 20, 20, 20],
             // data: [10, 20, 15, 20, 20, 20, 20],
-            backgroundColor: '#06577E',
-            borderColor: '#fff'
+            backgroundColor: '#06577E'
           }
         ]
       },
@@ -174,7 +173,6 @@ export class AdminReportsComponent implements OnInit {
                 size: 15,
                 
               }
-              // padding: 0
             }
           }
         }
