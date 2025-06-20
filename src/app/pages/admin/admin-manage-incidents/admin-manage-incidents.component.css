@@ -166,6 +166,7 @@ form {
 .table-responsive .table .align-middle .bi-pencil:hover,
 .table-responsive .table .align-middle .bi-trash:hover{
     color: #06577E;
+    cursor: pointer;
 }
 
 .align-middle .accordion-button {
