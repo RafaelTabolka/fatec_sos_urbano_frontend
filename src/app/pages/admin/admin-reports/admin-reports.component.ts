@@ -6,11 +6,12 @@ Chart.register(...registerables)
 Chart.register(ChartDataLabels)
 import { EChartsOption } from 'echarts';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
+import { RevealOnScrollDirective } from '../../../shared/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-admin-reports',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RevealOnScrollDirective],
   templateUrl: './admin-reports.component.html',
   styleUrl: './admin-reports.component.css',
   providers: [

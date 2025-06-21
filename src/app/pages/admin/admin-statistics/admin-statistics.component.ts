@@ -5,11 +5,12 @@ Chart.register(...registerables);
 Chart.register(chartDataLabels);
 import * as L from 'leaflet';
 import 'leaflet.heat';
+import { RevealOnScrollDirective } from '../../../shared/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-admin-statistics',
   standalone: true,
-  imports: [],
+  imports: [RevealOnScrollDirective],
   templateUrl: './admin-statistics.component.html',
   styleUrl: './admin-statistics.component.css'
 })
