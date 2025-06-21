@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Início Formulário -->
-            <form>
+            <form [formGroup]="formGroup" revealOnScroll>
                 <div class="row mb-3">
                     <div class="col-12">
                         <h2>Filtros</h2>
@@ -11,124 +11,215 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-custom-6">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">
-                                Data Início
-                            </label>
-                            <input type="date" class="form-control" id="exampleFormControlInput1"
-                                placeholder="name@example.com">
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-custom-6">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">
-                                Data Fim
-                            </label>
-                            <input type="date" class="form-control" id="exampleFormControlInput1"
-                                placeholder="name@example.com">
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-custom-3">
+                    <div class="col-12 col-md-6 col-xxl-3">
                         <div class="mb-3">
                             <label class="form-label">
-                                Hora Início
+                                Nome
                             </label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected value="0">Selecionar</option>
-                                <option value="4">0</option>
-                                <option value="3">1</option>
-                                <option value="2">2</option>
-                                <option value="1">3</option>
-                                <option value="1">4</option>
-                                <option value="1">5</option>
-                                <option value="1">6</option>
-                                <option value="1">7</option>
-                                <option value="1">8</option>
-                                <option value="1">9</option>
-                                <option value="1">10</option>
-                                <option value="4">11</option>
-                                <option value="3">12</option>
-                                <option value="2">13</option>
-                                <option value="1">14</option>
-                                <option value="1">15</option>
-                                <option value="1">16</option>
-                                <option value="1">17</option>
-                                <option value="1">18</option>
-                                <option value="1">19</option>
-                                <option value="1">20</option>
-                                <option value="1">21</option>
-                                <option value="1">22</option>
-                                <option value="1">23</option>
-                                <option value="1">24</option>
+                            <select formControlName="name" class="form-select" aria-label="Default select example">
+                                <option>Selecionar</option>
+                                <option value="3">Nome 1</option>
+                                <option value="2">Nome 2</option>
+                                <option value="1">Nome 3</option>
+                                <option value="1">Nome 4</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="col-12 col-custom-3">
+                    <div class="col-12 col-md-6 col-xxl-2">
                         <div class="mb-3">
                             <label class="form-label">
-                                Hora Fim
+                                Status Usuário
                             </label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected value="0">Selecionar</option>
-                                <option value="4">0</option>
-                                <option value="3">1</option>
-                                <option value="2">2</option>
-                                <option value="1">3</option>
-                                <option value="1">4</option>
-                                <option value="1">5</option>
-                                <option value="1">6</option>
-                                <option value="1">7</option>
-                                <option value="1">8</option>
-                                <option value="1">9</option>
-                                <option value="1">10</option>
-                                <option value="4">11</option>
-                                <option value="3">12</option>
-                                <option value="2">13</option>
-                                <option value="1">14</option>
-                                <option value="1">15</option>
-                                <option value="1">16</option>
-                                <option value="1">17</option>
-                                <option value="1">18</option>
-                                <option value="1">19</option>
-                                <option value="1">20</option>
-                                <option value="1">21</option>
-                                <option value="1">22</option>
-                                <option value="1">23</option>
-                                <option value="1">24</option>
+                            <select formControlName="userStatus" class="form-select" aria-label="Default select example">
+                                <option>Selecionar</option>
+                                <option value="ativo">Ativo</option>
+                                <option value="inativo">Inativo</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="col-12 col-lg-6 col-xxl-4">
+                    <div class="col-12 col-sm-6 col-xxl-3">
                         <div class="mb-3">
                             <label class="form-label">
-                                Endereço
+                                Comparativo
                             </label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected value="0">Selecionar</option>
-                                <option value="4">Endereço 1</option>
-                                <option value="3">Endereço 2</option>
-                                <option value="2">Endereço 3</option>
-                                <option value="1">Endereço 4</option>
-                                <option value="1">Endereço 5</option>
+                            <select formControlName="comparative" class="form-select" aria-label="Default select example">
+                                <option>Selecionar</option>
+                                <option value="2">É igual a</option>
+                                <option value="4">É maior do que</option>
+                                <option value="4">É maior ou igual a</option>
+                                <option value="3">É menor do que</option>
+                                <option value="3">É menor ou igual a</option>
+                                <option value="between">Está entre</option>
                             </select>
                         </div>
+                    </div>
+
+                    <div *ngIf="comparativeIsNotBetween" class="col-12 col-sm-6 col-xxl-4">
+                        <label class="form-label">Quantidade</label>
+                        <input formControlName="quantity" type="number" class="form-control quantity" placeholder="Digite o Valor">
+                    </div>
+
+                    <div *ngIf="comparativeIsBetween" class="col-6 col-sm-3 col-xxl-2">
+                        <label class="form-label">Valor</label>
+                        <input formControlName="minValue" type="number" class="form-control quantity" placeholder="Mínimo">
+                    </div>
+                    <div *ngIf="comparativeIsBetween" class="col-6 col-sm-3 col-xxl-2">
+                        <label class="form-label">Valor</label>
+                        <input formControlName="maxValue" type="number" class="form-control quantity" placeholder="Máximo">
                     </div>
                 </div>
 
                 <!-- Botão Formulário Filtro -->
                 <div class="row align-button-apply mt-3">
                     <div class="col-12 btn-apply">
-                        <button class="btn btn-primary">
+                        <button class="btn btn-primary me-2">
                             Aplicar <i class="bi bi-funnel"></i>
                         </button>
+                        <!-- <select class="btn btn-primary form-select">
+                            <option value="">Exportar</option>
+                            <option value="">Excel(.xlsx)</option>
+                            <option value="">Csv(.csv)</option>
+                        </select> -->
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </nav>
+
+<!-- Tabela -->
+<div class="table-responsive">
+    <table class="table" revealOnScroll>
+        <thead class="table-primary align-middle">
+            <tr class="table-head">
+                <th scope="col" class="d-none d-xxl-table-cell">Id Usuário</th>
+                <th scope="col" class="">Nome Usuário</th>
+                <th scope="col" class="d-none d-xxl-table-cell">CPF</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Email</th>
+                <th scope="col" class="">Qtde de Denúncias</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Status Usuário</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Telefone</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Editar</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Excluir</th>
+                <th scope="col" class="d-xxl-none">Detalhe</th>
+            </tr>
+
+        </thead>
+        <tbody class="align-middle">
+            <tr>
+                <td class="d-none d-xxl-table-cell">5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</td>
+                <td class="">Nome usuário</td>
+                <td class="d-none d-xxl-table-cell">111.111.111-11</td>
+                <td class="d-none d-xxl-table-cell">testandogmail.com</td>
+                <td class="">20</td>
+                <td class="d-none d-xxl-table-cell">Ativo</td>
+                <td class="d-none d-xxl-table-cell">(16)11111-1111</td>
+                <td class="d-none d-xxl-table-cell"><i class="bi bi-pencil"></i></td>
+                <td class="d-none d-xxl-table-cell"><i class="bi bi-trash"></i></td>
+                <td class="d-xxl-none">
+                    <div class="accordion accordion-flush" id="information-1">
+                        <div class="accordion-item">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Menu collapse -->
+            <tr id="collapseOne" class="accordion-collapse collapse d-xxl-none" data-bs-parent="#information-1">
+                <td colspan="3" class="table-data-collapse">
+                    <div class="d-flex flex-column collapse-content-father mb-1">
+                        <span class="collapse-content"><strong>Id Usuário: </strong>5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</span>
+                        <span class="collapse-content"><strong>CPF: </strong>111.111.111-11</span>
+                        <span class="collapse-content"><strong>Telefone: </strong>(16)11111-1111</span>
+                    </div>
+
+                    <div class="d-flex flex-column collapse-content-father mb-1">
+                        <span class="collapse-content"><strong>Email: </strong>testandoEmail-gmail.com</span>
+                        <span class="collapse-content"><strong>Status: </strong>Ativo</span>
+                    </div>
+
+                    <div class="d-flex flex-column collapse-content-father">
+                        <div class="row">
+                            <div class="col-6 col-align-right">
+                                <span><strong>Editar</strong><i class="bi bi-pencil"></i></span>
+                            </div>
+
+                            <div class="col-6 col-align-left">
+                                <span><strong>Excluir</strong><i class="bi bi-trash"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="d-none d-xxl-table-cell">5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</td>
+                <td class="">Nome usuário</td>
+                <td class="d-none d-xxl-table-cell">111.111.111-11</td>
+                <td class="d-none d-xxl-table-cell">testandogmail.com</td>
+                <td class="">20</td>
+                <td class="d-none d-xxl-table-cell">Ativo</td>
+                <td class="d-none d-xxl-table-cell">(16)11111-1111</td>
+                <td class="d-none d-xxl-table-cell"><i class="bi bi-pencil"></i></td>
+                <td class="d-none d-xxl-table-cell"><i class="bi bi-trash"></i></td>
+                <td class="d-xxl-none">
+                    <div class="accordion accordion-flush" id="information-2">
+                        <div class="accordion-item">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Menu collapse -->
+            <tr id="collapseTwo" class="accordion-collapse collapse d-xxl-none" data-bs-parent="#information-2">
+                <td colspan="3" class="table-data-collapse">
+                    <div class="d-flex flex-column collapse-content-father mb-1">
+                        <span class="collapse-content"><strong>Id Usuário: </strong>5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</span>
+                        <span class="collapse-content"><strong>CPF: </strong>111.111.111-11</span>
+                        <span class="collapse-content"><strong>Telefone: </strong>(16)11111-1111</span>
+                    </div>
+
+                    <div class="d-flex flex-column collapse-content-father mb-1">
+                        <span class="collapse-content"><strong>Email: </strong>testandoEmail-gmail.com</span>
+                        <span class="collapse-content"><strong>Status: </strong>Ativo</span>
+                    </div>
+
+                    <div class="d-flex flex-column collapse-content-father">
+                        <div class="row">
+                            <div class="col-6 col-align-right">
+                                <span><strong>Editar</strong><i class="bi bi-pencil"></i></span>
+                            </div>
+
+                            <div class="col-6 col-align-left">
+                                <span><strong>Excluir</strong><i class="bi bi-trash"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>           
+        </tbody>
+    </table>
+</div>
+
+<!-- Paginação -->
+ <div class="container-pagination" revealOnScroll>
+     <nav aria-label="Page navigation example" class="pagination-nav">
+       <ul class="pagination">
+         <li class="page-item"><a href="#" class="page-link"><i class="bi bi-chevron-left"></i></a></li>
+         <li class="page-item active"><a class="page-link" href="#">1</a></li>
+         <li class="page-item">
+           <a class="page-link" href="#" aria-current="page">2</a>
+         </li>
+         <li class="page-item"><a class="page-link" href="#">3</a></li>
+         <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+       </ul>
+     </nav>
+ </div>
