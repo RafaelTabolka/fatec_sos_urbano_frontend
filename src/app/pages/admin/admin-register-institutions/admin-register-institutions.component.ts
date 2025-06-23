@@ -3,12 +3,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { RevealOnScrollDirective } from '../../../shared/reveal-on-scroll.directive';
 
 @Component({
-  selector: 'app-admin-institutions',
+  selector: 'app-admin-register-institutions',
   standalone: true,
   imports: [RouterLink, RouterLinkActive, RevealOnScrollDirective],
-  templateUrl: './admin-institutions.component.html',
-  styleUrl: './admin-institutions.component.css'
+  templateUrl: './admin-register-institutions.component.html',
+  styleUrl: './admin-register-institutions.component.css'
 })
-export class AdminInstitutionsComponent {
+export class AdminRegisterInstitutionsComponent {
 
 }
