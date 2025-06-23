@@ -1,26 +1,250 @@
-<div class="container-fluid">
-    <h3>CADASTRAR EMPRESA</h3>
-    <form>
-        <div class="row">
-            <div class="col-12 col-xxl-3">Nome*</div>
-            <div class="col-12 col-xxl-3">CNPJ*</div>
-            <div class="col-12 col-xxl-3">Url Site</div>
+<!-- Formulário Filtros -->
+<nav class="navbar navbar-expand-md">
+    <div class="container-fluid" revealOnScroll>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Início Formulário -->
+            <form>
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <h2>Filtros</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Nome Institutição
+                            </label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected value="0">Selecionar</option>
+                                <option value="4">Nome 0</option>
+                                <option value="3">Nome 1</option>
+                                <option value="2">Nome 2</option>
+                                <option value="1">Nome 3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Tipo
+                            </label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected value="0">Selecionar</option>
+                                <option value="">Órgão Público</option>
+                                <option value="">Empresa Terceirizada</option>
+                                <option value="">Empresa Privada</option>
+                                <option value="">ONG/Associação</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Status
+                            </label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected value="0">Selecionar</option>
+                                <option value="1">Ativo</option>
+                                <option value="2">Inativo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botão Formulário Filtro -->
+                <div class="row align-button-apply mt-3">
+                    <div class="col-12 btn-apply">
+                        <button class="btn btn-primary">
+                            Aplicar <i class="bi bi-funnel"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
-    
-        <div class="row">
-            <div class="col-12">Descrição</div>
+    </div>
+</nav>
+
+<div class="navigation-buttons mb-3">
+    <div class="container-fluid align-buttons">
+        <!-- Botões Navegação -->
+        <div class="buttons" revealOnScroll>
+            <a class="btn btn-primary mb-3 mb-sm-0 me-sm-3" routerLinkActive="active"
+                routerLink="/admin-register-institutions">
+                Cadastrar<i class="bi bi-building-add"></i>
+            </a>
+            <a class="btn btn-primary" routerLink="/admin-institutions" routerLinkActive="active">
+                Informações <i class="bi bi-info-circle"></i>
+            </a>
         </div>
-    
-        <div class="row">
-            <div class="col-12 col-xxl-3">Data Fundação*</div>
-            <div class="col-12 col-xxl-3">Endereço*</div>
-            <div class="col-12 col-xxl-3">Status*</div>
-        </div>
-    
-        <div class="row">
-            <div class="col-12 col-xxl-3">Email*</div>
-            <div class="col-12 col-xxl-3">Telefone Contato*</div>
-            <div class="col-12 col-xxl-3">Tipo*</div>
-        </div>
-    </form>
+    </div>
 </div>
+
+<!-- Tabela -->
+<div class="table-responsive" revealOnScroll>
+    <table class="table">
+        <thead class="table-primary align-middle">
+            <tr class="table-head">
+                <th scope="col" class="d-none d-xxl-table-cell">Id Instituição</th>
+                <th scope="col" class="">Nome Instituição</th>
+                <th scope="col" class="">CNPJ</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Tipo</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Status</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Data Criação</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Descrição</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Endereço</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Site</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Email</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Telefone</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Denúncias Atendidas</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Editar</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Excluir</th>
+                <th scope="col" class="d-xxl-none">Detalhe</th>
+            </tr>
+
+        </thead>
+        <tbody class="align-middle">
+            <tr>
+                <td class="d-none d-xxl-table-cell">5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</td>
+                <td class="">Nome da Instituição API</td>
+                <td class="">111.111.11/1111-11</td>
+                <td class="d-none d-xxl-table-cell">Privado</td>
+                <td class="d-none d-xxl-table-cell">Ativo</td>
+                <td class="d-none d-xxl-table-cell">18/06/2025</td>
+                <td class="d-none d-xxl-table-cell">Empresa que tem como objetivo...</td>
+                <td class="d-none d-xxl-table-cell">Testando o endereço da instituição</td>
+                <td class="d-none d-xxl-table-cell">N/A</td>
+                <td class="d-none d-xxl-table-cell">testando_o_email-gmail.com</td>
+                <td class="d-none d-xxl-table-cell">(11)11111-1111</td>
+                <td class="d-none d-xxl-table-cell">5</td>
+                <td class="d-none d-xxl-table-cell"><i class="bi bi-pencil"></i></td>
+                <td class="d-none d-xxl-table-cell"><i class="bi bi-trash"></i></td>
+                <td class="d-xxl-none">
+                    <div class="accordion accordion-flush" id="information-1">
+                        <div class="accordion-item">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Menu collapse -->
+            <tr id="collapseOne" class="accordion-collapse collapse d-xxl-none" data-bs-parent="#information-1">
+                <td colspan="3" class="table-data-collapse">
+                    <div class="d-flex flex-column collapse-content-father mb-1">
+                        <span class="collapse-content"><strong>Id Instituição: </strong>5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</span>
+                        <span class="collapse-content"><strong>Tipo: </strong>Privado</span>
+                        <span class="collapse-content"><strong>Status: </strong>Ativo</span>
+                        <span class="collapse-content"><strong>Data Criação: </strong>18/06/2025</span>
+                    </div>
+
+                    <div class="d-flex flex-column collapse-content-father mb-1">
+                        <span class="collapse-content"><strong>Descrição: </strong>Empresa que tem como objetivo...</span>
+                        <span class="collapse-content"><strong>Endereço: </strong>Testando o endereço da instituição</span>
+                        <span class="collapse-content"><strong>Site: </strong>N/A</span>
+                        <span class="collapse-content"><strong>Email: </strong>testando_o_email-gmail.com</span>
+                    </div>
+
+                    <div class="d-flex flex-column collapse-content-father mb-1">
+                        <span class="collapse-content"><strong>Telefone: </strong>(11)11111-1111</span>
+                        <span class="collapse-content"><strong>Denúncias Atendidasd: </strong>5</span>
+                    </div>
+
+                    <div class="d-flex flex-column collapse-content-father">
+                        <div class="row">
+                            <div class="col-6 col-align-right">
+                                <span><strong>Editar</strong><i class="bi bi-pencil"></i></span>
+                            </div>
+
+                            <div class="col-6 col-align-left">
+                                <span><strong>Excluir</strong><i class="bi bi-trash"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="d-none d-xxl-table-cell">5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</td>
+                <td class="">Nome da Instituição API 2</td>
+                <td class="">111.111.11/1111-11</td>
+                <td class="d-none d-xxl-table-cell">Privado</td>
+                <td class="d-none d-xxl-table-cell">Ativo 2</td>
+                <td class="d-none d-xxl-table-cell">18/06/2025</td>
+                <td class="d-none d-xxl-table-cell">Empresa que tem como objetivo...</td>
+                <td class="d-none d-xxl-table-cell">Testando o endereço da instituição</td>
+                <td class="d-none d-xxl-table-cell">N/A</td>
+                <td class="d-none d-xxl-table-cell">testando_o_email-gmail.com</td>
+                <td class="d-none d-xxl-table-cell">(11)11111-1111</td>
+                <td class="d-none d-xxl-table-cell">5</td>
+                <td class="d-none d-xxl-table-cell"><i class="bi bi-pencil"></i></td>
+                <td class="d-none d-xxl-table-cell"><i class="bi bi-trash"></i></td>
+                <td class="d-xxl-none">
+                    <div class="accordion accordion-flush" id="information-2">
+                        <div class="accordion-item">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Menu collapse -->
+            <tr id="collapseTwo" class="accordion-collapse collapse d-xxl-none" data-bs-parent="#information-2">
+                <td colspan="3" class="table-data-collapse">
+                    <div class="d-flex flex-column collapse-content-father mb-1">
+                        <span class="collapse-content"><strong>Id Instituição: </strong>5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</span>
+                        <span class="collapse-content"><strong>Tipo: </strong>Privado</span>
+                        <span class="collapse-content"><strong>Status: </strong>Ativo</span>
+                        <span class="collapse-content"><strong>Data Criação: </strong>18/06/2025</span>
+                    </div>
+
+                    <div class="d-flex flex-column collapse-content-father mb-1">
+                        <span class="collapse-content"><strong>Descrição: </strong>Empresa que tem como objetivo...</span>
+                        <span class="collapse-content"><strong>Endereço: </strong>Testando o endereço da instituição</span>
+                        <span class="collapse-content"><strong>Site: </strong>N/A</span>
+                        <span class="collapse-content"><strong>Email: </strong>testando_o_email-gmail.com</span>
+                    </div>
+
+                    <div class="d-flex flex-column collapse-content-father mb-1">
+                        <span class="collapse-content"><strong>Telefone: </strong>(11)11111-1111</span>
+                        <span class="collapse-content"><strong>Denúncias Atendidasd: </strong>5</span>
+                    </div>
+
+                    <div class="d-flex flex-column collapse-content-father">
+                        <div class="row">
+                            <div class="col-6 col-align-right">
+                                <span><strong>Editar</strong><i class="bi bi-pencil"></i></span>
+                            </div>
+
+                            <div class="col-6 col-align-left">
+                                <span><strong>Excluir</strong><i class="bi bi-trash"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Paginação -->
+ <div class="container-pagination" revealOnScroll>
+     <nav aria-label="Page navigation example" class="pagination-nav">
+       <ul class="pagination">
+         <li class="page-item"><a href="#" class="page-link"><i class="bi bi-chevron-left"></i></a></li>
+         <li class="page-item active"><a class="page-link" href="#">1</a></li>
+         <li class="page-item">
+           <a class="page-link" href="#" aria-current="page">2</a>
+         </li>
+         <li class="page-item"><a class="page-link" href="#">3</a></li>
+         <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+       </ul>
+     </nav>
+ </div>

@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 // Nossas novas importações
 import { LoginserviceService } from '../../../services/login/loginservice.service';
 import { NavBarService } from '../../../services/nav-bar.service'; // Mantive seu serviço de NavBar
+import { RevealOnScrollDirective } from '../../../shared/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-user-login',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, CommonModule],
+  imports: [RouterLink, ReactiveFormsModule, CommonModule, RevealOnScrollDirective],
   templateUrl: './user-login.component.html',
   styleUrl: './user-login.component.css'
 })

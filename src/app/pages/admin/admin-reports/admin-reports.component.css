@@ -76,7 +76,6 @@ form {
 .row .col-12 .mb-3 .form-select {
     outline: 1px solid #292727;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    /* outline: 1px solid red; */
 }
 
 @media (min-width: 576px) {
@@ -119,7 +118,6 @@ form {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        /* outline: 1px solid black; */
     }
 
     .row .col-12.btn-apply .btn-primary {

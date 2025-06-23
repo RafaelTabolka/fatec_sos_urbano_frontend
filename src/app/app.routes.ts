@@ -16,6 +16,7 @@ import { AdminStatisticsComponent } from './pages/admin/admin-statistics/admin-s
 import { AdminUsersComponent } from './pages/admin/admin-users/admin-users.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AdminRegisterInstitutionsComponent } from './pages/admin/admin-register-institutions/admin-register-institutions.component';
 
 export const routes: Routes = [
     {
@@ -38,6 +39,7 @@ export const routes: Routes = [
         path: '',
         component: AdminLayoutComponent,
         children: [
+            {path: 'admin-register-institutions', pathMatch: 'full', component: AdminRegisterInstitutionsComponent},
             {path: 'admin-institutions', pathMatch: 'full', component: AdminInstitutionsComponent},
             {path: 'admin-manage-incidents', pathMatch: 'full', component: AdminManageIncidentsComponent},
             {path: 'admin-reports', pathMatch: 'full', component: AdminReportsComponent},

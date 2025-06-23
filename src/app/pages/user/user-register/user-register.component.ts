@@ -7,13 +7,14 @@ import { RegisterserviceService } from '../../../services/register/registerservi
 import { IUserRegisterRequest } from '../../../interface/user/IUserRegisterRequest';
 import { OnlyNumbersDirective } from '../../../directives/only-numbers.directive'; 
 import { OnlyLettersDirective } from '../../../directives/only-letters.directive'; 
+import { RevealOnScrollDirective } from '../../../shared/reveal-on-scroll.directive';
 
 
 
 @Component({
   selector: 'app-user-register',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, CommonModule, OnlyNumbersDirective, OnlyLettersDirective],
+  imports: [RouterLink, ReactiveFormsModule, CommonModule, OnlyNumbersDirective, OnlyLettersDirective, RevealOnScrollDirective],
   templateUrl: './user-register.component.html',
   styleUrl: './user-register.component.css'
 })
