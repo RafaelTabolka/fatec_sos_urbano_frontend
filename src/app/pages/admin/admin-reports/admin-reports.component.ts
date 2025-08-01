@@ -1,17 +1,26 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 Chart.register(...registerables)
 Chart.register(ChartDataLabels)
-import { EChartsOption } from 'echarts';
-import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
+import { provideEcharts } from 'ngx-echarts';
 import { RevealOnScrollDirective } from '../../../shared/reveal-on-scroll.directive';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { StatusIncidentServiceService } from '../../../services/core/status-incident/status-incident-service.service';
+import { IIncidentStatusResponse } from '../../../interface/Incident/IIncidentStatusesGetAllResponse';
+import { IIncidentResponse } from '../../../interface/Incident/IIncidentGetAllResponse';
+import { IncidentServiceService } from '../../../services/core/incident/incident-service.service';
+import { IInfosReportResponse } from '../../../interface/Admin/admin-infos-report/IInfosReportResponse';
+import { IInfosReportRequest } from '../../../interface/Admin/admin-infos-report/IInfosReportRequest';
+import { AdminInfosReportServiceService } from '../../../services/admin/admin-reports/admin-infos-report-service.service';
+
+
 
 @Component({
   selector: 'app-admin-reports',
   standalone: true,
-  imports: [CommonModule, RevealOnScrollDirective],
+  imports: [CommonModule, RevealOnScrollDirective, ReactiveFormsModule],
   templateUrl: './admin-reports.component.html',
   styleUrl: './admin-reports.component.css',
   providers: [
@@ -19,53 +28,87 @@ import { RevealOnScrollDirective } from '../../../shared/reveal-on-scroll.direct
   ]
 })
 export class AdminReportsComponent implements OnInit {
-  ngOnInit(): void {
-    this.RenderBarChar();
-    this.RenderPieChar();
+  filterForm: FormGroup;
+  incidents: IIncidentResponse[] = [];
+  statuses: IIncidentStatusResponse[] = [];
+  adminInfosRequest: IInfosReportRequest = {};
+  adminInfosResponse: IInfosReportResponse = {
+    qtyUsers: 0,
+    qtyIncidents: 0,
+    qtyIncidentsResolved: 0,
+    avgResolutionTimeInDays: null,
+    adminIncidentsByRegionsDto: [],
+    adminIncidentsByStatusesDto: [] 
   }
-  // chartOptions: EChartsOption = {
-  //   xAxis: {
-  //     type: 'category',
-  //     data: ['Janeiro/2024', 'Fevereiro/2024', 'Março/2024'],
-  //     axisLabel: {
-  //       rotate: 15,
-  //       interval: 1
-  //     }
-  //   },
-  //   yAxis: {
-  //     type: 'value'
-  //   },
-  //   series: [
-  //     {
-  //       name: 'Vendas (mil)',
-  //       type: 'bar',
-  //       data: [30, 20, 78],
-  //       label: {
-  //         show: true,
-  //         position: 'top',
-  //         formatter: '{c} mil'
-  //       } 
-  //     },
-  //     {
-  //       name: 'Vendas (mil)',
-  //       type: 'line',
-  //       data: [30, 20, 78],
+  barChart: Chart | null = null;
+  pieChart: Chart | null = null;
 
-  //     }
-  //   ]
-  // }
+  constructor(
+    private fb: FormBuilder,
+    private statusIncident: StatusIncidentServiceService,
+    private incident: IncidentServiceService,
+    private infos: AdminInfosReportServiceService ) {
+    this.filterForm = this.fb.group({
+      'startDate': ['', Validators.required],
+      'endDate': ['', Validators.required],
+      'status': ['', Validators.required],
+      'address': ['', Validators.required]
+    })
+  }
 
-  RenderBarChar() {
-    new Chart('bar-chart', {
+  ngOnInit(): void {
+    this.statusIncident.getAllIncidentStatuses().subscribe((res) => {
+      this.statuses = res.incidentStatuses.sort((a, b) => a.name.localeCompare(b.name)); // Ordem alfabética
+    })
+
+    this.incident.getAllIncidents().subscribe((res) => {
+      this.incidents = res.incidents;
+    })
+
+    this.infos.ListInfosReport(this.adminInfosRequest).subscribe((res) => {
+      this.adminInfosResponse = res
+      // console.log(this.adminInfosResponse);
+      this.renderBarChart();
+      this.renderPieChart();
+    })
+  }
+
+  makeFilters() {
+    this.adminInfosRequest = {
+      startDate: this.filterForm.value.startDate,
+      endDate: this.filterForm.value.endDate,
+      status: this.filterForm.value.status,
+      address: this.filterForm.value.address
+    }
+    console.log(this.adminInfosRequest);
+    
+    this.infos.ListInfosReport(this.adminInfosRequest).subscribe((res) => {
+      this.adminInfosResponse = res
+      this.renderBarChart();
+      this.renderPieChart();
+    })
+  }
+
+  //#region BarChart
+  renderBarChart() {
+    this.barChart?.destroy(); // Se houver ja criado, então destroi para que o gráfico filtrado seja criado
+
+    const labels: string[] = [];
+    const data: number[] = [];
+    
+    for (const element of this.adminInfosResponse.adminIncidentsByRegionsDto) {
+      labels.push(element.address);
+      data.push(element.qtyIncidents);
+    }
+
+    this.barChart = new Chart('bar-chart', {
       type: 'bar',
       data: {
-        labels: ['Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte'],
-        // labels:['Teste1', 'Teste2', 'Teste3', 'Teste4', 'Teste4', 'Teste4', 'Teste4'],
+        labels: labels,
         datasets: [
           {
-            // label: 'Região',
-            data: [100, 20, 15, 20, 20, 20, 20, 20, 20, 20, 20],
-            // data: [10, 20, 15, 20, 20, 20, 20],
+            // label: 'região',
+            data: data,
             backgroundColor: '#06577E'
           }
         ]
@@ -111,7 +154,7 @@ export class AdminReportsComponent implements OnInit {
               text: 'Região',
               color: '#000',
               font: {
-                
+
                 weight: 'bold'
               }
             },
@@ -123,17 +166,29 @@ export class AdminReportsComponent implements OnInit {
       }
     })
   }
+  //#endregion
 
-  RenderPieChar() {
-    new Chart('pie-chart', {
+  //#region  PieChart
+  renderPieChart() {
+    this.pieChart?.destroy(); // Se houver ja criado, então destroi para que o gráfico filtrado seja criado
+
+    const labels: string[] = [];
+    const data: number[] = [];
+
+    for (const element of this.adminInfosResponse.adminIncidentsByStatusesDto) {
+      labels.push(element.status);
+      data.push(element.qtyIncidents);
+    }
+
+    this.pieChart = new Chart('pie-chart', {
       type: 'pie',
       data: {
-        labels: ['Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte', 'Região norte'],
+        labels: labels,
         // labels:['Teste1', 'Teste2', 'Teste3', 'Teste4', 'Teste4', 'Teste4', 'Teste4'],
         datasets: [
           {
             label: 'sales',
-            data: [10, 20, 15, 20, 20, 20, 20, 20, 20, 20, 20],
+            data: data,
             // data: [10, 20, 15, 20, 20, 20, 20],
             // backgroundColor: '#06577E',
             // borderColor:'#fff'
@@ -144,7 +199,7 @@ export class AdminReportsComponent implements OnInit {
         layout: {
           padding: {
             top: 22,
-            bottom: 22 
+            bottom: 22
           }
         },
         plugins: {
@@ -159,7 +214,7 @@ export class AdminReportsComponent implements OnInit {
           legend: {
             title: {
               display: true,
-              text: 'Região',
+              text: 'Status',
               color: '#000',
               font: {
                 size: 17,
@@ -172,7 +227,7 @@ export class AdminReportsComponent implements OnInit {
               color: '#000',
               font: {
                 size: 15,
-                
+
               }
             }
           }
@@ -180,4 +235,6 @@ export class AdminReportsComponent implements OnInit {
       }
     })
   }
+  //#endregion
+
 }

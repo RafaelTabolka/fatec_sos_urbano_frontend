@@ -70,7 +70,7 @@ form {
 
 .row .col-custom-6 .mb-3 .form-control,
 .row .col-12 .mb-3 .form-select {
-    outline: 1px solid #292727;
+    /* outline: 1px solid #292727; */
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     /* outline: 1px solid red; */
 }

@@ -46,12 +46,12 @@
                             </label>
                             <select formControlName="comparative" class="form-select" aria-label="Default select example">
                                 <option>Selecionar</option>
-                                <option value="2">É igual a</option>
-                                <option value="4">É maior do que</option>
-                                <option value="4">É maior ou igual a</option>
-                                <option value="3">É menor do que</option>
-                                <option value="3">É menor ou igual a</option>
-                                <option value="between">Está entre</option>
+                                <option value="IsEqualTo">É igual a</option>
+                                <option value="IsBiggerThan">É maior do que</option>
+                                <option value="IsBiggerOrEqualTo">É maior ou igual a</option>
+                                <option value="IsSmallerThan">É menor do que</option>
+                                <option value="IsSmallerOrEqualTo">É menor ou igual a</option>
+                                <option value="Between">Está entre</option>
                             </select>
                         </div>
                     </div>
@@ -94,30 +94,28 @@
     <table class="table" revealOnScroll>
         <thead class="table-primary align-middle">
             <tr class="table-head">
-                <th scope="col" class="d-none d-xxl-table-cell">Id Usuário</th>
                 <th scope="col" class="">Nome Usuário</th>
-                <th scope="col" class="d-none d-xxl-table-cell">CPF</th>
+                <!-- <th scope="col" class="d-none d-xxl-table-cell">CPF</th> -->
                 <th scope="col" class="d-none d-xxl-table-cell">Email</th>
                 <th scope="col" class="">Qtde de Denúncias</th>
                 <th scope="col" class="d-none d-xxl-table-cell">Status Usuário</th>
                 <th scope="col" class="d-none d-xxl-table-cell">Telefone</th>
-                <th scope="col" class="d-none d-xxl-table-cell">Editar</th>
-                <th scope="col" class="d-none d-xxl-table-cell">Excluir</th>
+                <!-- <th scope="col" class="d-none d-xxl-table-cell">Editar</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Excluir</th> -->
                 <th scope="col" class="d-xxl-none">Detalhe</th>
             </tr>
 
         </thead>
         <tbody class="align-middle">
             <tr>
-                <td class="d-none d-xxl-table-cell">5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</td>
                 <td class="">Nome usuário</td>
-                <td class="d-none d-xxl-table-cell">111.111.111-11</td>
+                <!-- <td class="d-none d-xxl-table-cell">111.111.111-11</td> -->
                 <td class="d-none d-xxl-table-cell">testandogmail.com</td>
                 <td class="">20</td>
                 <td class="d-none d-xxl-table-cell">Ativo</td>
                 <td class="d-none d-xxl-table-cell">(16)11111-1111</td>
-                <td class="d-none d-xxl-table-cell"><i class="bi bi-pencil"></i></td>
-                <td class="d-none d-xxl-table-cell"><i class="bi bi-trash"></i></td>
+                <!-- <td class="d-none d-xxl-table-cell"><i class="bi bi-pencil"></i></td>
+                <td class="d-none d-xxl-table-cell"><i class="bi bi-trash"></i></td> -->
                 <td class="d-xxl-none">
                     <div class="accordion accordion-flush" id="information-1">
                         <div class="accordion-item">
@@ -132,18 +130,17 @@
             <!-- Menu collapse -->
             <tr id="collapseOne" class="accordion-collapse collapse d-xxl-none" data-bs-parent="#information-1">
                 <td colspan="3" class="table-data-collapse">
-                    <div class="d-flex flex-column collapse-content-father mb-1">
-                        <span class="collapse-content"><strong>Id Usuário: </strong>5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</span>
+                    <!-- <div class="d-flex flex-column collapse-content-father mb-1">
                         <span class="collapse-content"><strong>CPF: </strong>111.111.111-11</span>
-                        <span class="collapse-content"><strong>Telefone: </strong>(16)11111-1111</span>
-                    </div>
-
+                    </div> -->
+                    
                     <div class="d-flex flex-column collapse-content-father mb-1">
+                        <span class="collapse-content"><strong>Telefone: </strong>(16)11111-1111</span>
                         <span class="collapse-content"><strong>Email: </strong>testandoEmail-gmail.com</span>
                         <span class="collapse-content"><strong>Status: </strong>Ativo</span>
                     </div>
 
-                    <div class="d-flex flex-column collapse-content-father">
+                    <!-- <div class="d-flex flex-column collapse-content-father">
                         <div class="row">
                             <div class="col-6 col-align-right">
                                 <span><strong>Editar</strong><i class="bi bi-pencil"></i></span>
@@ -153,20 +150,19 @@
                                 <span><strong>Excluir</strong><i class="bi bi-trash"></i></span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </td>
             </tr>
 
             <tr>
-                <td class="d-none d-xxl-table-cell">5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</td>
                 <td class="">Nome usuário</td>
-                <td class="d-none d-xxl-table-cell">111.111.111-11</td>
+                <!-- <td class="d-none d-xxl-table-cell">111.111.111-11</td> -->
                 <td class="d-none d-xxl-table-cell">testandogmail.com</td>
                 <td class="">20</td>
                 <td class="d-none d-xxl-table-cell">Ativo</td>
                 <td class="d-none d-xxl-table-cell">(16)11111-1111</td>
-                <td class="d-none d-xxl-table-cell"><i class="bi bi-pencil"></i></td>
-                <td class="d-none d-xxl-table-cell"><i class="bi bi-trash"></i></td>
+                <!-- <td class="d-none d-xxl-table-cell"><i class="bi bi-pencil"></i></td>
+                <td class="d-none d-xxl-table-cell"><i class="bi bi-trash"></i></td> -->
                 <td class="d-xxl-none">
                     <div class="accordion accordion-flush" id="information-2">
                         <div class="accordion-item">
@@ -181,18 +177,17 @@
             <!-- Menu collapse -->
             <tr id="collapseTwo" class="accordion-collapse collapse d-xxl-none" data-bs-parent="#information-2">
                 <td colspan="3" class="table-data-collapse">
-                    <div class="d-flex flex-column collapse-content-father mb-1">
-                        <span class="collapse-content"><strong>Id Usuário: </strong>5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</span>
+                    <!-- <div class="d-flex flex-column collapse-content-father mb-1">
                         <span class="collapse-content"><strong>CPF: </strong>111.111.111-11</span>
-                        <span class="collapse-content"><strong>Telefone: </strong>(16)11111-1111</span>
-                    </div>
-
+                    </div> -->
+                    
                     <div class="d-flex flex-column collapse-content-father mb-1">
+                        <span class="collapse-content"><strong>Telefone: </strong>(16)11111-1111</span>
                         <span class="collapse-content"><strong>Email: </strong>testandoEmail-gmail.com</span>
                         <span class="collapse-content"><strong>Status: </strong>Ativo</span>
                     </div>
 
-                    <div class="d-flex flex-column collapse-content-father">
+                    <!-- <div class="d-flex flex-column collapse-content-father">
                         <div class="row">
                             <div class="col-6 col-align-right">
                                 <span><strong>Editar</strong><i class="bi bi-pencil"></i></span>
@@ -202,7 +197,7 @@
                                 <span><strong>Excluir</strong><i class="bi bi-trash"></i></span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </td>
             </tr>           
         </tbody>

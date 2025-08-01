@@ -3,7 +3,7 @@
     <div class="container-fluid" revealOnScroll>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Início Formulário -->
-            <form>
+            <form [formGroup]="formGroup">
                 <div class="row mb-3">
                     <div class="col-12">
                         <h2>Filtros</h2>
@@ -16,8 +16,8 @@
                             <label class="form-label">
                                 Nome Institutição
                             </label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected value="0">Selecionar</option>
+                            <select formControlName="name" class="form-select" aria-label="Default select example">
+                                <option>Selecionar</option>
                                 <option value="4">Nome 0</option>
                                 <option value="3">Nome 1</option>
                                 <option value="2">Nome 2</option>
@@ -31,8 +31,8 @@
                             <label class="form-label">
                                 Tipo
                             </label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected value="0">Selecionar</option>
+                            <select formControlName="type" class="form-select" aria-label="Default select example">
+                                <option>Selecionar</option>
                                 <option value="">Órgão Público</option>
                                 <option value="">Empresa Terceirizada</option>
                                 <option value="">Empresa Privada</option>
@@ -46,12 +46,47 @@
                             <label class="form-label">
                                 Status
                             </label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected value="0">Selecionar</option>
+                            <select formControlName="status" class="form-select" aria-label="Default select example">
+                                <option>Selecionar</option>
                                 <option value="1">Ativo</option>
                                 <option value="2">Inativo</option>
                             </select>
                         </div>
+                    </div>
+
+                    
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Comparativo
+                            </label>
+                            <select formControlName="comparative" class="form-select" aria-label="Default select example">
+                                <option>Selecionar</option>
+                                <option value="IsEqualTo">É igual a</option>
+                                <option value="IsBiggerThan">É maior do que</option>
+                                <option value="IsBiggerOrEqualTo">É maior ou igual a</option>
+                                <option value="IsSmallerThan">É menor do que</option>
+                                <option value="IsSmallerOrEqualTo">É menor ou igual a</option>
+                                <option value="Between">Está entre</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div *ngIf="comparativeIsNotBetween" class="col-12 col-sm-6 col-xl-3">
+                        <label class="form-label">Quantidade</label>
+                        <input formControlName="quantity" type="number" class="form-control quantity" placeholder="Digite o Valor">
+                    </div>
+    
+                    <div *ngIf="comparativeIsBetween" class="col-6 col-sm-3 col-xxl-2">
+                        <label class="form-label">Valor</label>
+                        <input formControlName="minValue" type="number" class="form-control quantity" placeholder="Mínimo">
+                    </div>
+                    <div *ngIf="comparativeIsBetween" class="col-6 col-sm-3 col-xxl-2">
+                        <label class="form-label">Valor</label>
+                        <input formControlName="maxValue" type="number" class="form-control quantity" placeholder="Máximo">
                     </div>
                 </div>
 
@@ -88,12 +123,11 @@
     <table class="table">
         <thead class="table-primary align-middle">
             <tr class="table-head">
-                <th scope="col" class="d-none d-xxl-table-cell">Id Instituição</th>
                 <th scope="col" class="">Nome Instituição</th>
                 <th scope="col" class="">CNPJ</th>
                 <th scope="col" class="d-none d-xxl-table-cell">Tipo</th>
                 <th scope="col" class="d-none d-xxl-table-cell">Status</th>
-                <th scope="col" class="d-none d-xxl-table-cell">Data Criação</th>
+                <th scope="col" class="d-none d-xxl-table-cell">Data de Cadastro</th>
                 <th scope="col" class="d-none d-xxl-table-cell">Descrição</th>
                 <th scope="col" class="d-none d-xxl-table-cell">Endereço</th>
                 <th scope="col" class="d-none d-xxl-table-cell">Site</th>
@@ -108,7 +142,6 @@
         </thead>
         <tbody class="align-middle">
             <tr>
-                <td class="d-none d-xxl-table-cell">5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</td>
                 <td class="">Nome da Instituição API</td>
                 <td class="">111.111.11/1111-11</td>
                 <td class="d-none d-xxl-table-cell">Privado</td>
@@ -137,14 +170,13 @@
             <tr id="collapseOne" class="accordion-collapse collapse d-xxl-none" data-bs-parent="#information-1">
                 <td colspan="3" class="table-data-collapse">
                     <div class="d-flex flex-column collapse-content-father mb-1">
-                        <span class="collapse-content"><strong>Id Instituição: </strong>5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</span>
                         <span class="collapse-content"><strong>Tipo: </strong>Privado</span>
                         <span class="collapse-content"><strong>Status: </strong>Ativo</span>
-                        <span class="collapse-content"><strong>Data Criação: </strong>18/06/2025</span>
+                        <span class="collapse-content"><strong>Data de Cadastro: </strong>18/06/2025</span>
+                        <span class="collapse-content"><strong>Descrição: </strong>Empresa que tem como objetivo...</span>
                     </div>
 
                     <div class="d-flex flex-column collapse-content-father mb-1">
-                        <span class="collapse-content"><strong>Descrição: </strong>Empresa que tem como objetivo...</span>
                         <span class="collapse-content"><strong>Endereço: </strong>Testando o endereço da instituição</span>
                         <span class="collapse-content"><strong>Site: </strong>N/A</span>
                         <span class="collapse-content"><strong>Email: </strong>testando_o_email-gmail.com</span>
@@ -152,7 +184,7 @@
 
                     <div class="d-flex flex-column collapse-content-father mb-1">
                         <span class="collapse-content"><strong>Telefone: </strong>(11)11111-1111</span>
-                        <span class="collapse-content"><strong>Denúncias Atendidasd: </strong>5</span>
+                        <span class="collapse-content"><strong>Denúncias Atendidas: </strong>5</span>
                     </div>
 
                     <div class="d-flex flex-column collapse-content-father">
@@ -170,7 +202,6 @@
             </tr>
 
             <tr>
-                <td class="d-none d-xxl-table-cell">5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</td>
                 <td class="">Nome da Instituição API 2</td>
                 <td class="">111.111.11/1111-11</td>
                 <td class="d-none d-xxl-table-cell">Privado</td>
@@ -199,14 +230,13 @@
             <tr id="collapseTwo" class="accordion-collapse collapse d-xxl-none" data-bs-parent="#information-2">
                 <td colspan="3" class="table-data-collapse">
                     <div class="d-flex flex-column collapse-content-father mb-1">
-                        <span class="collapse-content"><strong>Id Instituição: </strong>5dcc2d64-8696-44a0-9fb4-8c6b3821db5e</span>
                         <span class="collapse-content"><strong>Tipo: </strong>Privado</span>
                         <span class="collapse-content"><strong>Status: </strong>Ativo</span>
                         <span class="collapse-content"><strong>Data Criação: </strong>18/06/2025</span>
+                        <span class="collapse-content"><strong>Descrição: </strong>Empresa que tem como objetivo...</span>
                     </div>
 
                     <div class="d-flex flex-column collapse-content-father mb-1">
-                        <span class="collapse-content"><strong>Descrição: </strong>Empresa que tem como objetivo...</span>
                         <span class="collapse-content"><strong>Endereço: </strong>Testando o endereço da instituição</span>
                         <span class="collapse-content"><strong>Site: </strong>N/A</span>
                         <span class="collapse-content"><strong>Email: </strong>testando_o_email-gmail.com</span>
@@ -214,7 +244,7 @@
 
                     <div class="d-flex flex-column collapse-content-father mb-1">
                         <span class="collapse-content"><strong>Telefone: </strong>(11)11111-1111</span>
-                        <span class="collapse-content"><strong>Denúncias Atendidasd: </strong>5</span>
+                        <span class="collapse-content"><strong>Denúncias Atendidas: </strong>5</span>
                     </div>
 
                     <div class="d-flex flex-column collapse-content-father">

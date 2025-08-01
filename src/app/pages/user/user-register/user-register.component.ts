@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavBarService } from '../../../services/nav-bar.service';
+import { NavBarService } from '../../../components/navbar/nav-bar.service';
 import { Router, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common'; // Importe o CommonModule

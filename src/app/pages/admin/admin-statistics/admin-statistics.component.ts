@@ -87,6 +87,59 @@ export class AdminStatisticsComponent implements OnInit {
     })
   }
 
+  RenderHeatMapChart() {
+    const map = L.map('map').setView([-21.6033, -48.3658], 14);
+
+    // Estilo mapa OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data © OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Estilo mapa escuro
+    // L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    //   attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+    //   subdomains: 'abcd',
+    //   maxZoom: 19
+    // }).addTo(map);
+
+    // Estilo mapa amarelado
+    // L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+    //   attribution: '&copy; <a href="https://www.esri.com/">Esri</a>',
+    //   maxZoom: 19
+    // }).addTo(map);
+
+    // Estilo mapa claro
+    // L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    //   attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+    //   subdomains: 'abcd',
+    //   maxZoom: 19
+    // }).addTo(map);
+
+    const points: [number, number, number][] = [
+      // Matão
+      // Esses valores são o seguinte: [latitude, longitude, percentual de denúncias]
+      [-21.6033, -48.3658, 0.5], // Centro
+      [-21.5900, -48.3600, 0.1], // Norte
+      [-21.6200, -48.3700, 0.15], // Sul
+      [-21.6050, -48.3450, 0.2], // Leste
+      [-21.6100, -48.3900, 0.05],  // Oeste
+
+      // Araraquara
+      [-21.7865, -48.1780, 0.9], // Centro
+      [-21.7730, -48.1785, 0.6], // Norte (Jardim Universal)
+      [-21.8020, -48.1775, 0.7], // Sul (Vale do Sol)
+      [-21.7850, -48.1620, 0.4], // Leste (Jardim Dom Pedro)
+      [-21.7840, -48.1950, 0.8], // Oeste (Vila Xavier)
+    ]
+
+    // Estes daqui são os pontos onde os pontos de calor serão mostrados. Então passamos a variável que possui esses pontos e o estilo desses pontos de calor
+    const heat = (L as any).heatLayer(points, {
+      radius: 100,
+      blur: 15,
+      maxZoom: 4
+    }).addTo(map);
+  }
+
   RenderHorizontalBarChart() {
     new Chart('horizontal-bar-chart', {
       type: 'bar',
@@ -213,57 +266,6 @@ export class AdminStatisticsComponent implements OnInit {
     })
   }
 
-  RenderHeatMapChart() {
-    const map = L.map('map').setView([-21.6033, -48.3658], 13);
-
-    // Estilo mapa OpenaStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: 'Map data © OpenStreetMap contributors'
-    }).addTo(map);
-
-    // Estilo mapa escuro
-    // L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    //   attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
-    //   subdomains: 'abcd',
-    //   maxZoom: 19
-    // }).addTo(map);
-
-    // Estilo mapa amarelado
-    // L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-    //   attribution: '&copy; <a href="https://www.esri.com/">Esri</a>',
-    //   maxZoom: 19
-    // }).addTo(map);
-
-    // Estilo mapa claro
-    // L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    //   attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
-    //   subdomains: 'abcd',
-    //   maxZoom: 19
-    // }).addTo(map);
-
-    const points: [number, number, number][] = [
-      // Matão
-      // Esses valores são o seguinte: [latitude, longitude, percentual de denúncias]
-      [-21.6033, -48.3658, 0.5], // Centro
-      [-21.5900, -48.3600, 0.1], // Norte
-      [-21.6200, -48.3700, 0.15], // Sul
-      [-21.6050, -48.3450, 0.2], // Leste
-      [-21.6100, -48.3900, 0.05],  // Oeste
-
-      // Araraquara
-      [-21.7865, -48.1780, 0.9], // Centro
-      [-21.7730, -48.1785, 0.6], // Norte (Jardim Universal)
-      [-21.8020, -48.1775, 0.7], // Sul (Vale do Sol)
-      [-21.7850, -48.1620, 0.4], // Leste (Jardim Dom Pedro)
-      [-21.7840, -48.1950, 0.8], // Oeste (Vila Xavier)
-    ]
-
-    // Estes daqui são os pontos onde os pontos de calor serão mostrados. Então passamos a variável que possui esses pontos e o estilo desses pontos de calor
-    const heat = (L as any).heatLayer(points, {
-      radius: 100,
-      blur: 15,
-      maxZoom: 4
-    }).addTo(map);
-  }
+  
 }
 

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NavBarService } from '../../../services/nav-bar.service';
+import { NavBarService } from '../../../components/navbar/nav-bar.service';
 import { RevealOnScrollDirective } from '../../../shared/reveal-on-scroll.directive';
 
 @Component({

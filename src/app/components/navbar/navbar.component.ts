@@ -1,7 +1,7 @@
 import { CommonModule} from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { NavBarService } from '../../services/nav-bar.service';
+import { NavBarService } from './nav-bar.service';
 
 @Component({
   selector: 'app-navbar',
