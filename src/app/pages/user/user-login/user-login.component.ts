@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 
 // Nossas novas importações
 import { LoginserviceService } from '../../../services/login/loginservice.service';
-import { NavBarService } from '../../../services/nav-bar.service'; // Mantive seu serviço de NavBar
+import { NavBarService } from '../../../components/navbar/nav-bar.service'; // Mantive seu serviço de NavBar
 import { RevealOnScrollDirective } from '../../../shared/reveal-on-scroll.directive';
 
 @Component({

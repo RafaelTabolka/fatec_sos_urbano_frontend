@@ -3,7 +3,7 @@
     <div class="container-fluid" revealOnScroll>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Início Formulário -->
-            <form>
+            <form [formGroup]="filterForm">
                 <div class="row mb-3">
                     <div class="col-12">
                         <h2>Filtros</h2>
@@ -16,7 +16,7 @@
                             <label for="exampleFormControlInput1" class="form-label">
                                 Data Início
                             </label>
-                            <input type="date" class="form-control" id="exampleFormControlInput1"
+                            <input formControlName="startDate" type="date" class="form-control" id="exampleFormControlInput1"
                                 placeholder="name@example.com">
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                             <label for="exampleFormControlInput1" class="form-label">
                                 Data Fim
                             </label>
-                            <input type="date" class="form-control" id="exampleFormControlInput1"
+                            <input formControlName="endDate" type="date" class="form-control" id="exampleFormControlInput1"
                                 placeholder="name@example.com">
                         </div>
                     </div>
@@ -36,13 +36,13 @@
                             <label class="form-label">
                                 Status
                             </label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected value="0">Selecionar</option>
-                                <option value="4">Arquivado</option>
-                                <option value="3">Concluído</option>
+                            <select formControlName="status" class="form-select" aria-label="Default select example">
+                                <option value="">Selecione</option>
+                                <option *ngFor="let status of statuses" [value]="status.name">{{status.name}}</option>
+                                <!-- <option value="3">Concluído</option>
                                 <option value="2">Em andamento</option>
                                 <option value="1">Pendente</option>
-                                <option value="1">Recebido</option>
+                                <option value="1">Recebido</option> -->
                             </select>
                         </div>
                     </div>
@@ -52,13 +52,9 @@
                             <label class="form-label">
                                 Endereço
                             </label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected value="0">Selecionar</option>
-                                <option value="4">Endereço 1</option>
-                                <option value="3">Endereço 2</option>
-                                <option value="2">Endereço 3</option>
-                                <option value="1">Endereço 4</option>
-                                <option value="1">Endereço 5</option>
+                            <select formControlName="address" class="form-select" aria-label="Default select example">
+                                <option selected value="">Selecionar</option>
+                                <option *ngFor="let incident of incidents" [value]="incident.address">{{ incident.address }}</option>
                             </select>
                         </div>
                     </div>
@@ -67,7 +63,7 @@
                 <!-- Botão Formulário Filtro -->
                 <div class="row align-button-apply mt-3">
                     <div class="col-12 btn-apply">
-                        <button class="btn btn-primary">
+                        <button (click)="makeFilters()" class="btn btn-primary">
                             Aplicar <i class="bi bi-funnel"></i>
                         </button>
                     </div>
@@ -82,19 +78,19 @@
     <div class="row">
         <div class="col-12 col-custom">
             <span class="text-inside-card">Qtde de Usuários</span> 
-            <span class="font-number-metric">0</span>
+            <span class="font-number-metric">{{ adminInfosResponse.qtyUsers }}</span>
         </div>
         <div class="col-12 col-custom">
             <span class="text-inside-card">Qtde de Denúncias</span>
-            <span class="font-number-metric">0</span>
+            <span class="font-number-metric">{{ adminInfosResponse.qtyIncidents }}</span>
         </div>
         <div class="col-12 col-custom">
-            <span class="text-inside-card">Denúncias Resolvidas</span>
-            <span class="font-number-metric">0</span>
+            <span class="text-inside-card">Qtde de Denúncias Resolvidas</span>
+            <span class="font-number-metric">{{ adminInfosResponse.qtyIncidentsResolved }}</span>
         </div>
         <div class="col-12 col-custom">
-            <span class="text-inside-card">Tempo médio de resolução</span>
-            <span class="font-number-metric">0</span>
+            <span class="text-inside-card">Tempo médio de resolução em Dias</span>
+            <span class="font-number-metric">{{ adminInfosResponse.avgResolutionTimeInDays }}</span>
         </div>
     </div>
  </div>
@@ -113,7 +109,7 @@
     <div class="container-fluid-charts">
         <div class="row">
            <div class="col-12">
-               <h3>Qtde de Denúncias por Status</h3>
+               <h3>Denúncias por Status</h3>
                <canvas id="pie-chart"></canvas>
            </div>
         </div>

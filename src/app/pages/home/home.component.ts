@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavBarService } from '../../services/nav-bar.service';
+import { NavBarService } from '../../components/navbar/nav-bar.service';
 import { Router, RouterLink } from '@angular/router';
 import { RevealOnScrollDirective } from '../../shared/reveal-on-scroll.directive';
 

@@ -31,9 +31,9 @@ export class AdminUsersComponent implements OnInit {
       this.comparativeIsBetween = false;
       this.comparativeIsNotBetween = true;
     
-      if (value.comparative == 'between') {
+      if (value.comparative == 'Between') {
         this.comparativeIsBetween = true;
-        this.comparativeIsNotBetween = false
+        this.comparativeIsNotBetween = false;
       }
       
     })
